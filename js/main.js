@@ -41,29 +41,35 @@ function initNavigation() {
         });
     }
 
-    // Dropdown menu functionality for mobile
+    // Dropdown menu functionality
     const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
     
     dropdownItems.forEach(dropdown => {
-        const dropdownLink = dropdown.querySelector('.nav-link');
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
         
-        // Mobile dropdown toggle
-        if (dropdownLink) {
-            dropdownLink.addEventListener('click', function(e) {
-                // Only prevent default and toggle on mobile
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    
-                    // Close other dropdowns
-                    dropdownItems.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    });
-                }
+        // Dropdown toggle functionality (works on all screen sizes)
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdownItems.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
             });
         }
+        
+        // Close dropdown when clicking outside (mobile)
+        document.addEventListener('click', function(event) {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
     });
 
     // Close dropdowns when window resizes to desktop
