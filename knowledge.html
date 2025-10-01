@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge Base - Bizzy OPS | IT Guides & Documentation</title>
+    <meta name="description" content="Access comprehensive IT guides, tutorials, and documentation from BizzyOPS experts. Learn about cybersecurity, network setup, cloud migration, and more." />
+    <link rel="canonical" href="https://bizzyops.co.uk/knowledge.html" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Knowledge Base - Bizzy OPS | IT Guides & Documentation" />
+    <meta property="og:description" content="Access comprehensive IT guides, tutorials, and documentation from BizzyOPS experts. Learn about cybersecurity, network setup, cloud migration, and more." />
+    <meta property="og:url" content="https://bizzyops.co.uk/knowledge.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://bizzyops.co.uk/images/mascot-icon.png" />
+    
+    <!-- Icons and PWA -->
+    <link rel="icon" type="image/png" href="images/mascot-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon-192.png" />
+    <link rel="manifest" href="manifest.json" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/mascot-icon.png" alt="Bizzy OPS logo">
+                <span>Bizzy OPS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="knowledge.html" class="nav-link active">Knowledge Base</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tel:+44-020-8230-1647" class="nav-link sos">SOS</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Knowledge Base</h1>
+            <p>Expert IT guides, tutorials, and best practices to help you manage your technology effectively</p>
+        </div>
+    </section>
+
+    <!-- Knowledge Base Content -->
+    <section class="knowledge-base-section">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="knowledge-search">
+                <div class="search-container">
+                    <input type="text" id="knowledgeSearch" placeholder="Search for guides, tutorials, or topics...">
+                    <button type="button" class="search-btn">Search</button>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="knowledge-categories">
+                <h2>Browse by Category</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="images/cybersecurity.jpg" alt="Cybersecurity">
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Security best practices, threat protection, and compliance guides</p>
+                        <span class="article-count">8 Articles</span>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="images/network-solutions.jpg" alt="Network Management">
+                        </div>
+                        <h3>Network Management</h3>
+                        <p>Network setup, optimization, and troubleshooting guides</p>
+                        <span class="article-count">6 Articles</span>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="images/cloud-solutions.jpg" alt="Cloud Solutions">
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Cloud migration, setup, and management tutorials</p>
+                        <span class="article-count">5 Articles</span>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <img src="images/managed-it-support.jpg" alt="System Administration">
+                        </div>
+                        <h3>System Administration</h3>
+                        <p>Server management, maintenance, and optimization guides</p>
+                        <span class="article-count">7 Articles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Articles -->
+            <div class="featured-articles">
+                <h2>Popular Guides</h2>
+                <div class="articles-grid">
+                    <article class="knowledge-article">
+                        <div class="article-image">
+                            <img src="images/two-factor-auth.jpg" alt="Two-Factor Authentication">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Cybersecurity</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3>Setting Up Two-Factor Authentication</h3>
+                            <p>Learn how to implement 2FA across your organization to enhance security and protect against unauthorized access...</p>
+                            <a href="knowledge/two-factor-authentication-setup.html" class="read-more">Read Guide →</a>
+                        </div>
+                    </article>
+
+                    <article class="knowledge-article">
+                        <div class="article-image">
+                            <img src="images/secure-passwords.jpg" alt="Secure Passwords">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Cybersecurity</span>
+                                <span class="read-time">3 min read</span>
+                            </div>
+                            <h3>Creating Secure Passwords</h3>
+                            <p>Best practices for creating and managing strong passwords that protect your business data and systems...</p>
+                            <a href="knowledge/secure-passwords.html" class="read-more">Read Guide →</a>
+                        </div>
+                    </article>
+
+                    <article class="knowledge-article">
+                        <div class="article-image">
+                            <img src="images/microsoft-365.jpg" alt="Microsoft 365">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Cloud Solutions</span>
+                                <span class="read-time">10 min read</span>
+                            </div>
+                            <h3>Microsoft 365 Setup Guide</h3>
+                            <p>Complete walkthrough for setting up Microsoft 365 for your business, including user management and security...</p>
+                            <a href="knowledge/microsoft-365-setup.html" class="read-more">Read Guide →</a>
+                        </div>
+                    </article>
+
+                    <article class="knowledge-article">
+                        <div class="article-image">
+                            <img src="images/hardware-server-support.jpg" alt="Network Security">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Network Management</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                            <h3>Network Security Best Practices</h3>
+                            <p>Essential security measures to protect your network infrastructure from threats and vulnerabilities...</p>
+                            <a href="knowledge/network-security-best-practices.html" class="read-more">Read Guide →</a>
+                        </div>
+                    </article>
+
+                    <article class="knowledge-article">
+                        <div class="article-image">
+                            <img src="images/backup-strategy.jpg" alt="Backup Strategy">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">System Administration</span>
+                                <span class="read-time">12 min read</span>
+                            </div>
+                            <h3>Backup Strategy Guide</h3>
+                            <p>Comprehensive guide to creating an effective backup strategy that protects your business data...</p>
+                            <a href="knowledge/backup-strategy-guide.html" class="read-more">Read Guide →</a>
+                        </div>
+                    </article>
+
+                    <article class="knowledge-article">
+                        <div class="article-image">
+                            <img src="images/cloud-solutions.jpg" alt="Cloud Migration">
+                        </div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="category">Cloud Solutions</span>
+                                <span class="read-time">15 min read</span>
+                            </div>
+                            <h3>Cloud Migration Checklist</h3>
+                            <p>Step-by-step checklist for migrating your business systems to the cloud safely and efficiently...</p>
+                            <a href="knowledge/cloud-migration-checklist.html" class="read-more">Read Guide →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links-section">
+                <h2>Quick Links</h2>
+                <div class="quick-links-grid">
+
+                    
+                    <div class="quick-link">
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li><a href="#">Email Security</a></li>
+                            <li><a href="#">File Management</a></li>
+                            <li><a href="#">Remote Work Setup</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quick-link">
+                        <h4>Tools & Resources</h4>
+                        <ul>
+                            <li><a href="#">Security Checklist</a></li>
+                            <li><a href="#">Network Diagnostics</a></li>
+                            <li><a href="#">Performance Monitoring</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support CTA -->
+    <section class="support-cta">
+        <div class="container">
+            <h2>Need Personalized Support?</h2>
+            <p>Can't find what you're looking for? Our expert team is here to help with personalized IT support and guidance.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Contact Support</a>
+                <a href="tel:+44-020-8230-1647" class="btn btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/mascot-icon.png" alt="Bizzy OPS logo">
+                        <div>
+                            <h3>Bizzy OPS</h3>
+                            <p>Managed IT Services</p>
+                            <p>24/7 Emergency Support Available - Your trusted IT partner.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Managed IT Support</a></li>
+                        <li><a href="services.html">Hardware Support</a></li>
+                        <li><a href="services.html">Network Solutions</a></li>
+                        <li><a href="services.html">System Operations</a></li>
+                        <li><a href="services.html">Cybersecurity</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="knowledge.html">Knowledge Base</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Business Hours</h4>
+                    <div class="business-hours">
+                        <div>
+                            <strong>Standard Support</strong>
+                            <p>Monday - Friday</p>
+                            <p>9:00 AM - 5:00 PM</p>
+                        </div>
+                        <div>
+                            <strong>Emergency OPS</strong>
+                            <p>Out of hours support</p>
+                            <p>6:00 AM - 9:00 AM</p>
+                            <p>Till 11:00 PM</p>
+                            <small>*Charges apply</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bizzy OPS. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

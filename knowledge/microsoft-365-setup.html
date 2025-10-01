@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 365 Setup Guide | BizzyOPS Knowledge Base</title>
+    <meta name="description" content="Complete walkthrough for setting up Microsoft 365 for your business, including user management, security configuration, and productivity optimization.">
+    <link rel="icon" type="image/x-icon" href="../images/mascot-icon.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                <span>BizzyOPS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="../knowledge.html" class="nav-link active">Knowledge Base</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="tel:+44-020-8230-1647" class="nav-link sos">SOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="knowledge-article-page">
+        <header class="knowledge-header">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../knowledge.html">Knowledge Base</a>
+                    <span>→</span>
+                    <a href="../knowledge.html">Cloud Solutions</a>
+                    <span>→</span>
+                    <span>Microsoft 365 Setup</span>
+                </nav>
+                
+                <div class="article-meta">
+                    <span class="category">Cloud Solutions</span>
+                    <span class="read-time">10 min read</span>
+                    <span class="updated">Updated: September 30, 2025</span>
+                </div>
+                
+                <h1>Microsoft 365 Setup Guide</h1>
+                <p class="article-subtitle">Complete walkthrough for setting up Microsoft 365 for your business, including user management, security configuration, and productivity optimization.</p>
+                
+                <div class="article-actions">
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                        </svg>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="knowledge-content">
+            <img src="../images/microsoft-365.jpg" alt="Microsoft 365 Setup and Configuration" class="article-image">
+            
+            <div class="container">
+                <div class="content-wrapper">
+                    <aside class="table-of-contents">
+                        <h3>Contents</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#overview">Microsoft 365 Overview</a></li>
+                                <li><a href="#initial-setup">Initial Setup</a></li>
+                                <li><a href="#domain-configuration">Domain Configuration</a></li>
+                                <li><a href="#user-management">User Management</a></li>
+                                <li><a href="#security-setup">Security Configuration</a></li>
+                                <li><a href="#email-setup">Email Configuration</a></li>
+                                <li><a href="#teams-setup">Microsoft Teams Setup</a></li>
+                                <li><a href="#data-migration">Data Migration</a></li>
+                                <li><a href="#best-practices">Best Practices</a></li>
+                                <li><a href="#ongoing-management">Ongoing Management</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <main class="article-content">
+                        <section id="overview">
+                            <h2>Microsoft 365 Overview</h2>
+                            <p>Microsoft 365 is a comprehensive cloud-based productivity suite that combines Office applications, email services, collaboration tools, and advanced security features for modern businesses.</p>
+                            
+                            <div class="plans-comparison">
+                                <h3>Popular Business Plans</h3>
+                                <div class="plans-grid">
+                                    <div class="plan-card">
+                                        <h4>Microsoft 365 Business Basic</h4>
+                                        <p class="price">£4.20/user/month</p>
+                                        <ul>
+                                            <li>Web and mobile versions of Office apps</li>
+                                            <li>1 TB OneDrive storage</li>
+                                            <li>Microsoft Teams</li>
+                                            <li>Exchange Online (50 GB mailbox)</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="plan-card featured">
+                                        <h4>Microsoft 365 Business Standard</h4>
+                                        <p class="price">£10.50/user/month</p>
+                                        <ul>
+                                            <li>Desktop Office applications</li>
+                                            <li>All Business Basic features</li>
+                                            <li>Outlook desktop client</li>
+                                            <li>Bookings and Lists</li>
+                                        </ul>
+                                        <span class="recommended">Most Popular</span>
+                                    </div>
+
+                                    <div class="plan-card">
+                                        <h4>Microsoft 365 Business Premium</h4>
+                                        <p class="price">£18.40/user/month</p>
+                                        <ul>
+                                            <li>All Business Standard features</li>
+                                            <li>Advanced security features</li>
+                                            <li>Device management (Intune)</li>
+                                            <li>Advanced threat protection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="initial-setup">
+                            <h2>Initial Setup Process</h2>
+                            
+                            <h3>Step 1: Purchase and Account Creation</h3>
+                            <ol>
+                                <li>Visit the Microsoft 365 admin portal</li>
+                                <li>Select your business plan and number of users</li>
+                                <li>Create your global administrator account</li>
+                                <li>Complete the billing setup</li>
+                                <li>Verify your identity and business information</li>
+                            </ol>
+
+                            <h3>Step 2: Initial Configuration</h3>
+                            <ol>
+                                <li>Access the Microsoft 365 Admin Center</li>
+                                <li>Complete the setup wizard</li>
+                                <li>Configure your organization profile</li>
+                                <li>Set your time zone and regional settings</li>
+                                <li>Choose your default privacy settings</li>
+                            </ol>
+
+                            <div class="tip-box">
+                                <h4>💡 Pro Tip</h4>
+                                <p>Keep your global administrator credentials secure and consider setting up a dedicated admin account separate from your daily-use account.</p>
+                            </div>
+                        </section>
+
+                        <section id="domain-configuration">
+                            <h2>Custom Domain Configuration</h2>
+                            <p>Setting up your custom domain gives your organization a professional appearance and control over your email addresses.</p>
+
+                            <h3>Domain Setup Process</h3>
+                            <ol>
+                                <li><strong>Add Your Domain:</strong>
+                                    <ul>
+                                        <li>Navigate to Settings → Domains in Admin Center</li>
+                                        <li>Click "Add domain" and enter your domain name</li>
+                                        <li>Select how you want to verify domain ownership</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Verify Domain Ownership:</strong>
+                                    <ul>
+                                        <li>Add the provided TXT record to your DNS</li>
+                                        <li>Wait for DNS propagation (up to 24 hours)</li>
+                                        <li>Click "Verify" in the admin center</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Configure DNS Records:</strong>
+                                    <ul>
+                                        <li>MX records for email routing</li>
+                                        <li>CNAME records for services</li>
+                                        <li>TXT records for security (SPF, DKIM)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+
+                            <div class="dns-records">
+                                <h4>Required DNS Records</h4>
+                                <table>
+                                    <tr>
+                                        <th>Record Type</th>
+                                        <th>Host Name</th>
+                                        <th>Value</th>
+                                        <th>Purpose</th>
+                                    </tr>
+                                    <tr>
+                                        <td>MX</td>
+                                        <td>@</td>
+                                        <td>yourdomain-com.mail.protection.outlook.com</td>
+                                        <td>Email delivery</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CNAME</td>
+                                        <td>autodiscover</td>
+                                        <td>autodiscover.outlook.com</td>
+                                        <td>Email client configuration</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TXT</td>
+                                        <td>@</td>
+                                        <td>v=spf1 include:spf.protection.outlook.com -all</td>
+                                        <td>Email security (SPF)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </section>
+
+                        <section id="user-management">
+                            <h2>User Management and Licensing</h2>
+                            
+                            <h3>Adding Users</h3>
+                            <ol>
+                                <li>Navigate to Users → Active users in Admin Center</li>
+                                <li>Click "Add a user"</li>
+                                <li>Fill in user details (name, username, contact info)</li>
+                                <li>Assign appropriate licenses</li>
+                                <li>Set initial password and security options</li>
+                                <li>Assign to security groups as needed</li>
+                            </ol>
+
+                            <h3>User Roles and Permissions</h3>
+                            <div class="roles-grid">
+                                <div class="role-card">
+                                    <h4>Global Administrator</h4>
+                                    <p>Complete access to all features and settings. Limit to 2-3 trusted users.</p>
+                                </div>
+
+                                <div class="role-card">
+                                    <h4>User Administrator</h4>
+                                    <p>Can manage users, groups, and passwords. Good for HR or IT staff.</p>
+                                </div>
+
+                                <div class="role-card">
+                                    <h4>Exchange Administrator</h4>
+                                    <p>Manages email and mailbox settings. Ideal for email administrators.</p>
+                                </div>
+
+                                <div class="role-card">
+                                    <h4>SharePoint Administrator</h4>
+                                    <p>Controls SharePoint and OneDrive settings and permissions.</p>
+                                </div>
+                            </div>
+
+                            <h3>Bulk User Operations</h3>
+                            <p>For larger organizations, use PowerShell or CSV import:</p>
+                            <div class="code-block">
+                                <code>
+# PowerShell example for bulk user creation<br>
+Import-Csv "users.csv" | ForEach-Object {<br>
+&nbsp;&nbsp;New-MsolUser -UserPrincipalName $_.Email -FirstName $_.FirstName -LastName $_.LastName<br>
+}
+                                </code>
+                            </div>
+                        </section>
+
+                        <section id="security-setup">
+                            <h2>Security Configuration</h2>
+                            <p>Implementing robust security measures is crucial for protecting your organization's data and systems.</p>
+
+                            <h3>Multi-Factor Authentication (MFA)</h3>
+                            <ol>
+                                <li>Navigate to Azure Active Directory → Security → MFA</li>
+                                <li>Enable MFA for all users or specific groups</li>
+                                <li>Configure MFA methods (app, SMS, call)</li>
+                                <li>Set up trusted IPs and remember device settings</li>
+                                <li>Monitor MFA usage and compliance</li>
+                            </ol>
+
+                            <h3>Conditional Access Policies</h3>
+                            <div class="security-policies">
+                                <div class="policy-card">
+                                    <h4>Block Legacy Authentication</h4>
+                                    <p>Prevent sign-ins from older clients that don't support MFA</p>
+                                </div>
+
+                                <div class="policy-card">
+                                    <h4>Require MFA for Admin Roles</h4>
+                                    <p>Enforce MFA for all administrative accounts</p>
+                                </div>
+
+                                <div class="policy-card">
+                                    <h4>Risk-Based Policies</h4>
+                                    <p>Block or require additional verification for risky sign-ins</p>
+                                </div>
+
+                                <div class="policy-card">
+                                    <h4>Device Compliance</h4>
+                                    <p>Require managed or compliant devices for access</p>
+                                </div>
+                            </div>
+
+                            <h3>Data Loss Prevention (DLP)</h3>
+                            <ul>
+                                <li>Configure policies to protect sensitive data</li>
+                                <li>Set up credit card, SSN, or custom data type detection</li>
+                                <li>Define actions for policy violations</li>
+                                <li>Monitor and report on DLP activities</li>
+                            </ul>
+                        </section>
+
+                        <section id="email-setup">
+                            <h2>Email Configuration</h2>
+                            
+                            <h3>Mailbox Settings</h3>
+                            <ul>
+                                <li><strong>Storage Limits:</strong> Configure appropriate mailbox sizes</li>
+                                <li><strong>Retention Policies:</strong> Set up email retention rules</li>
+                                <li><strong>Shared Mailboxes:</strong> Create team or department mailboxes</li>
+                                <li><strong>Distribution Lists:</strong> Set up email groups for communication</li>
+                            </ul>
+
+                            <h3>Email Security</h3>
+                            <div class="email-security">
+                                <h4>Anti-Spam and Anti-Malware</h4>
+                                <ul>
+                                    <li>Configure spam filter policies</li>
+                                    <li>Set up quarantine notifications</li>
+                                    <li>Enable Safe Attachments and Safe Links</li>
+                                    <li>Configure anti-phishing policies</li>
+                                </ul>
+
+                                <h4>Email Encryption</h4>
+                                <ul>
+                                    <li>Enable Microsoft 365 Message Encryption</li>
+                                    <li>Set up encryption rules for sensitive data</li>
+                                    <li>Configure external recipient experience</li>
+                                    <li>Train users on encryption features</li>
+                                </ul>
+                            </div>
+
+                            <h3>Mobile Email Setup</h3>
+                            <p>Configure mobile device policies for secure email access:</p>
+                            <ul>
+                                <li>Require device encryption</li>
+                                <li>Set minimum password requirements</li>
+                                <li>Enable remote wipe capabilities</li>
+                                <li>Configure app protection policies</li>
+                            </ul>
+                        </section>
+
+                        <section id="teams-setup">
+                            <h2>Microsoft Teams Configuration</h2>
+                            
+                            <h3>Teams Policies and Settings</h3>
+                            <div class="teams-settings">
+                                <div class="setting-group">
+                                    <h4>Meeting Policies</h4>
+                                    <ul>
+                                        <li>Configure meeting recording permissions</li>
+                                        <li>Set participant limits and controls</li>
+                                        <li>Enable/disable chat and screen sharing</li>
+                                        <li>Configure external participant settings</li>
+                                    </ul>
+                                </div>
+
+                                <div class="setting-group">
+                                    <h4>Messaging Policies</h4>
+                                    <ul>
+                                        <li>Control file sharing and app usage</li>
+                                        <li>Set up message retention policies</li>
+                                        <li>Configure chat and channel settings</li>
+                                        <li>Enable/disable external communication</li>
+                                    </ul>
+                                </div>
+
+                                <div class="setting-group">
+                                    <h4>App and Integration Policies</h4>
+                                    <ul>
+                                        <li>Manage third-party app installations</li>
+                                        <li>Configure custom app policies</li>
+                                        <li>Set up connector and bot permissions</li>
+                                        <li>Control guest access to apps</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Team Structure Best Practices</h3>
+                            <ul>
+                                <li>Create teams based on departments or projects</li>
+                                <li>Use channels for topic-based conversations</li>
+                                <li>Set up private channels for sensitive discussions</li>
+                                <li>Implement naming conventions for consistency</li>
+                                <li>Regular review and cleanup of unused teams</li>
+                            </ul>
+                        </section>
+
+                        <section id="data-migration">
+                            <h2>Data Migration Strategies</h2>
+                            
+                            <h3>Email Migration</h3>
+                            <div class="migration-options">
+                                <div class="migration-card">
+                                    <h4>IMAP Migration</h4>
+                                    <p>For smaller organizations migrating from IMAP-compatible email systems</p>
+                                    <ul>
+                                        <li>Suitable for under 50 users</li>
+                                        <li>Migrates email content only</li>
+                                        <li>Simple setup and execution</li>
+                                    </ul>
+                                </div>
+
+                                <div class="migration-card">
+                                    <h4>Exchange Hybrid</h4>
+                                    <p>For organizations with existing Exchange Server infrastructure</p>
+                                    <ul>
+                                        <li>Seamless coexistence</li>
+                                        <li>Gradual migration approach</li>
+                                        <li>Preserves all email data and features</li>
+                                    </ul>
+                                </div>
+
+                                <div class="migration-card">
+                                    <h4>Third-Party Tools</h4>
+                                    <p>For complex migrations from various email platforms</p>
+                                    <ul>
+                                        <li>Supports multiple source platforms</li>
+                                        <li>Advanced mapping and filtering</li>
+                                        <li>Minimal downtime</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>File and Document Migration</h3>
+                            <ul>
+                                <li><strong>SharePoint Migration Tool:</strong> Microsoft's free tool for file migration</li>
+                                <li><strong>OneDrive Sync:</strong> Desktop sync client for individual user migrations</li>
+                                <li><strong>Third-Party Solutions:</strong> For complex file server migrations</li>
+                                <li><strong>Manual Upload:</strong> For smaller amounts of data</li>
+                            </ul>
+                        </section>
+
+                        <section id="best-practices">
+                            <h2>Implementation Best Practices</h2>
+                            
+                            <div class="best-practices-grid">
+                                <div class="practice-card">
+                                    <h4>✅ Plan Your Rollout</h4>
+                                    <ul>
+                                        <li>Start with a pilot group</li>
+                                        <li>Gather feedback and refine</li>
+                                        <li>Gradual rollout by department</li>
+                                        <li>Provide comprehensive training</li>
+                                    </ul>
+                                </div>
+
+                                <div class="practice-card">
+                                    <h4>✅ Security First</h4>
+                                    <ul>
+                                        <li>Enable MFA immediately</li>
+                                        <li>Configure conditional access</li>
+                                        <li>Set up DLP policies</li>
+                                        <li>Regular security reviews</li>
+                                    </ul>
+                                </div>
+
+                                <div class="practice-card">
+                                    <h4>✅ User Training</h4>
+                                    <ul>
+                                        <li>Provide role-specific training</li>
+                                        <li>Create user guides and documentation</li>
+                                        <li>Set up regular Q&A sessions</li>
+                                        <li>Establish ongoing support channels</li>
+                                    </ul>
+                                </div>
+
+                                <div class="practice-card">
+                                    <h4>✅ Monitor and Optimize</h4>
+                                    <ul>
+                                        <li>Use Microsoft 365 reports and analytics</li>
+                                        <li>Monitor user adoption and satisfaction</li>
+                                        <li>Regular policy and settings reviews</li>
+                                        <li>Stay updated with new features</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="ongoing-management">
+                            <h2>Ongoing Management and Maintenance</h2>
+                            
+                            <h3>Regular Administrative Tasks</h3>
+                            <ul>
+                                <li><strong>Weekly:</strong> Review security alerts and sign-in reports</li>
+                                <li><strong>Monthly:</strong> Update user licenses and permissions</li>
+                                <li><strong>Quarterly:</strong> Review and update security policies</li>
+                                <li><strong>Annually:</strong> Conduct full security audit and training refresh</li>
+                            </ul>
+
+                            <h3>Monitoring and Reporting</h3>
+                            <div class="monitoring-areas">
+                                <div class="monitor-card">
+                                    <h4>Usage Analytics</h4>
+                                    <ul>
+                                        <li>Active user counts</li>
+                                        <li>Application usage statistics</li>
+                                        <li>Storage utilization</li>
+                                        <li>License optimization opportunities</li>
+                                    </ul>
+                                </div>
+
+                                <div class="monitor-card">
+                                    <h4>Security Monitoring</h4>
+                                    <ul>
+                                        <li>Failed sign-in attempts</li>
+                                        <li>Risky user activities</li>
+                                        <li>Malware and phishing detections</li>
+                                        <li>DLP policy violations</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="contact-support">
+                                <h4>Need Professional Microsoft 365 Setup?</h4>
+                                <p>Our Microsoft certified experts can handle your complete Microsoft 365 deployment and configuration.</p>
+                                <a href="../contact.html" class="btn btn-primary">Get Professional Setup</a>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                        <span>BizzyOPS</span>
+                    </div>
+                    <p>Professional IT support and cybersecurity solutions for businesses across London and the UK.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Knowledge Base</h4>
+                    <ul class="footer-links">
+                        <li><a href="../knowledge.html">All Guides</a></li>
+                        <li><a href="two-factor-authentication-setup.html">Two-Factor Authentication</a></li>
+                        <li><a href="secure-passwords.html">Password Security</a></li>
+                        <li><a href="microsoft-365-setup.html">Microsoft 365</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

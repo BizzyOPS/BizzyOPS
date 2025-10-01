@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up Two-Factor Authentication | BizzyOPS Knowledge Base</title>
+    <meta name="description" content="Complete guide to implementing two-factor authentication (2FA) across your organization to enhance security and protect against unauthorized access.">
+    <link rel="icon" type="image/x-icon" href="../images/mascot-icon.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                <span>BizzyOPS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="../knowledge.html" class="nav-link active">Knowledge Base</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="tel:+44-020-8230-1647" class="nav-link sos">SOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="knowledge-article-page">
+        <header class="knowledge-header">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../knowledge.html">Knowledge Base</a>
+                    <span>→</span>
+                    <a href="../knowledge.html">Cybersecurity</a>
+                    <span>→</span>
+                    <span>Two-Factor Authentication</span>
+                </nav>
+                
+                <div class="article-meta">
+                    <span class="category">Cybersecurity</span>
+                    <span class="read-time">5 min read</span>
+                    <span class="updated">Updated: September 30, 2025</span>
+                </div>
+                
+                <h1>Setting Up Two-Factor Authentication</h1>
+                <p class="article-subtitle">Complete guide to implementing two-factor authentication (2FA) across your organization to enhance security and protect against unauthorized access.</p>
+                
+                <div class="article-actions">
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                        </svg>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="knowledge-content">
+            <img src="../images/two-factor-auth.jpg" alt="Two-Factor Authentication Setup" class="article-image">
+            
+            <div class="container">
+                <div class="content-wrapper">
+                    <aside class="table-of-contents">
+                        <h3>Contents</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#what-is-2fa">What is 2FA?</a></li>
+                                <li><a href="#why-important">Why is 2FA Important?</a></li>
+                                <li><a href="#types-of-2fa">Types of 2FA</a></li>
+                                <li><a href="#setup-guide">Setup Guide</a></li>
+                                <li><a href="#popular-apps">Popular 2FA Apps</a></li>
+                                <li><a href="#business-implementation">Business Implementation</a></li>
+                                <li><a href="#best-practices">Best Practices</a></li>
+                                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <main class="article-content">
+                        <section id="what-is-2fa">
+                            <h2>What is Two-Factor Authentication?</h2>
+                            <p>Two-Factor Authentication (2FA) is a security process that requires users to provide two different authentication factors to verify their identity. This adds an extra layer of security beyond just a username and password.</p>
+                            
+                            <div class="info-box">
+                                <h4>The Three Authentication Factors</h4>
+                                <ul>
+                                    <li><strong>Something you know</strong> - Password, PIN, or security questions</li>
+                                    <li><strong>Something you have</strong> - Phone, hardware token, or smart card</li>
+                                    <li><strong>Something you are</strong> - Fingerprint, face recognition, or other biometrics</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="why-important">
+                            <h2>Why is 2FA Important for Your Business?</h2>
+                            <p>Passwords alone are no longer sufficient to protect against modern cyber threats. Here's why 2FA is crucial:</p>
+                            
+                            <div class="benefits-grid">
+                                <div class="benefit-card">
+                                    <h4>🔒 Enhanced Security</h4>
+                                    <p>Reduces the risk of unauthorized access by 99.9% according to Microsoft research.</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <h4>🛡️ Protects Against Breaches</h4>
+                                    <p>Even if passwords are compromised, attackers can't access accounts without the second factor.</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <h4>📊 Compliance Requirements</h4>
+                                    <p>Many regulations (GDPR, HIPAA, PCI DSS) require or recommend 2FA implementation.</p>
+                                </div>
+                                <div class="benefit-card">
+                                    <h4>💼 Business Continuity</h4>
+                                    <p>Prevents costly data breaches and maintains customer trust and reputation.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="types-of-2fa">
+                            <h2>Types of Two-Factor Authentication</h2>
+                            
+                            <h3>SMS Text Messages</h3>
+                            <p><strong>How it works:</strong> A code is sent to your mobile phone via SMS.</p>
+                            <p><strong>Pros:</strong> Easy to set up, works with any phone</p>
+                            <p><strong>Cons:</strong> Vulnerable to SIM swapping attacks, requires cell service</p>
+
+                            <h3>Authenticator Apps</h3>
+                            <p><strong>How it works:</strong> Apps generate time-based codes that refresh every 30 seconds.</p>
+                            <p><strong>Pros:</strong> More secure than SMS, works offline</p>
+                            <p><strong>Cons:</strong> Requires smartphone, can be lost if phone is damaged</p>
+
+                            <h3>Hardware Tokens</h3>
+                            <p><strong>How it works:</strong> Physical devices that generate or store authentication codes.</p>
+                            <p><strong>Pros:</strong> Highest security level, not dependent on phones</p>
+                            <p><strong>Cons:</strong> More expensive, can be lost or forgotten</p>
+
+                            <h3>Biometric Authentication</h3>
+                            <p><strong>How it works:</strong> Uses fingerprints, face recognition, or voice patterns.</p>
+                            <p><strong>Pros:</strong> Convenient, can't be forgotten or lost</p>
+                            <p><strong>Cons:</strong> Requires compatible hardware, privacy concerns</p>
+                        </section>
+
+                        <section id="setup-guide">
+                            <h2>Step-by-Step Setup Guide</h2>
+                            
+                            <h3>Step 1: Choose Your 2FA Method</h3>
+                            <ol>
+                                <li>Assess your organization's security needs</li>
+                                <li>Consider user convenience and technical capabilities</li>
+                                <li>Select appropriate 2FA methods for different user groups</li>
+                            </ol>
+
+                            <h3>Step 2: Install Authenticator App (Recommended)</h3>
+                            <ol>
+                                <li>Download a reputable authenticator app (see recommendations below)</li>
+                                <li>Create a backup of your recovery codes</li>
+                                <li>Test the app with a non-critical account first</li>
+                            </ol>
+
+                            <h3>Step 3: Enable 2FA on Critical Accounts</h3>
+                            <ol>
+                                <li><strong>Email accounts</strong> (Office 365, Gmail, etc.)</li>
+                                <li><strong>Cloud services</strong> (AWS, Azure, Google Cloud)</li>
+                                <li><strong>Financial accounts</strong> (banking, accounting software)</li>
+                                <li><strong>Business applications</strong> (CRM, project management)</li>
+                            </ol>
+
+                            <div class="warning-box">
+                                <h4>⚠️ Important Security Note</h4>
+                                <p>Always save your recovery codes in a secure location. Without them, you may lose access to your accounts if you lose your 2FA device.</p>
+                            </div>
+                        </section>
+
+                        <section id="popular-apps">
+                            <h2>Popular 2FA Applications</h2>
+                            
+                            <div class="app-comparison">
+                                <div class="app-card">
+                                    <h4>Microsoft Authenticator</h4>
+                                    <p><strong>Best for:</strong> Microsoft 365 environments</p>
+                                    <p><strong>Features:</strong> Push notifications, biometric unlock, cloud backup</p>
+                                    <p><strong>Platforms:</strong> iOS, Android</p>
+                                </div>
+
+                                <div class="app-card">
+                                    <h4>Google Authenticator</h4>
+                                    <p><strong>Best for:</strong> Simple, reliable 2FA</p>
+                                    <p><strong>Features:</strong> Offline codes, easy setup</p>
+                                    <p><strong>Platforms:</strong> iOS, Android</p>
+                                </div>
+
+                                <div class="app-card">
+                                    <h4>Authy</h4>
+                                    <p><strong>Best for:</strong> Multi-device synchronization</p>
+                                    <p><strong>Features:</strong> Cloud backup, desktop apps, encrypted sync</p>
+                                    <p><strong>Platforms:</strong> iOS, Android, Windows, macOS, Linux</p>
+                                </div>
+
+                                <div class="app-card">
+                                    <h4>LastPass Authenticator</h4>
+                                    <p><strong>Best for:</strong> Integration with password managers</p>
+                                    <p><strong>Features:</strong> One-tap approval, backup and restore</p>
+                                    <p><strong>Platforms:</strong> iOS, Android</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="business-implementation">
+                            <h2>Business Implementation Strategy</h2>
+                            
+                            <h3>Phase 1: Planning (Week 1-2)</h3>
+                            <ul>
+                                <li>Conduct security assessment</li>
+                                <li>Identify critical systems requiring 2FA</li>
+                                <li>Choose 2FA solutions for different user groups</li>
+                                <li>Develop implementation timeline</li>
+                            </ul>
+
+                            <h3>Phase 2: Pilot Program (Week 3-4)</h3>
+                            <ul>
+                                <li>Start with IT team and key administrators</li>
+                                <li>Test chosen 2FA solutions</li>
+                                <li>Document setup procedures</li>
+                                <li>Gather feedback and refine processes</li>
+                            </ul>
+
+                            <h3>Phase 3: Rollout (Week 5-8)</h3>
+                            <ul>
+                                <li>Deploy to departments in priority order</li>
+                                <li>Provide training and support materials</li>
+                                <li>Monitor adoption and address issues</li>
+                                <li>Enforce 2FA policies gradually</li>
+                            </ul>
+
+                            <h3>Phase 4: Maintenance (Ongoing)</h3>
+                            <ul>
+                                <li>Regular security reviews</li>
+                                <li>Update 2FA policies as needed</li>
+                                <li>Monitor for new threats and solutions</li>
+                                <li>Conduct periodic user training</li>
+                            </ul>
+                        </section>
+
+                        <section id="best-practices">
+                            <h2>2FA Best Practices</h2>
+                            
+                            <div class="best-practices-list">
+                                <div class="practice-item">
+                                    <h4>✅ Use App-Based 2FA When Possible</h4>
+                                    <p>Authenticator apps are more secure than SMS and work without cell service.</p>
+                                </div>
+
+                                <div class="practice-item">
+                                    <h4>✅ Store Recovery Codes Securely</h4>
+                                    <p>Keep backup codes in a secure password manager or encrypted storage.</p>
+                                </div>
+
+                                <div class="practice-item">
+                                    <h4>✅ Enable 2FA on All Critical Accounts</h4>
+                                    <p>Prioritize email, cloud services, financial accounts, and admin panels.</p>
+                                </div>
+
+                                <div class="practice-item">
+                                    <h4>✅ Regular Security Training</h4>
+                                    <p>Educate employees about phishing and social engineering attacks.</p>
+                                </div>
+
+                                <div class="practice-item">
+                                    <h4>✅ Monitor and Update</h4>
+                                    <p>Regularly review 2FA settings and update to newer, more secure methods.</p>
+                                </div>
+
+                                <div class="practice-item">
+                                    <h4>❌ Don't Rely Solely on SMS</h4>
+                                    <p>SMS 2FA is better than nothing but vulnerable to SIM swapping attacks.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="troubleshooting">
+                            <h2>Common Issues and Solutions</h2>
+                            
+                            <h3>Problem: Lost Access to 2FA Device</h3>
+                            <p><strong>Solution:</strong> Use recovery codes, contact account support, or use alternate authentication method if configured.</p>
+
+                            <h3>Problem: 2FA Codes Not Working</h3>
+                            <p><strong>Solution:</strong> Check device time synchronization, ensure app is updated, try generating a new code.</p>
+
+                            <h3>Problem: Employee Resistance to 2FA</h3>
+                            <p><strong>Solution:</strong> Provide clear training, explain security benefits, choose user-friendly solutions, implement gradually.</p>
+
+                            <h3>Problem: 2FA Slowing Down Workflows</h3>
+                            <p><strong>Solution:</strong> Use remember device options, implement single sign-on (SSO), choose faster 2FA methods like push notifications.</p>
+
+                            <div class="contact-support">
+                                <h4>Need Additional Help?</h4>
+                                <p>Our cybersecurity experts can help you implement 2FA across your organization.</p>
+                                <a href="../contact.html" class="btn btn-primary">Contact Our Security Team</a>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                        <span>BizzyOPS</span>
+                    </div>
+                    <p>Professional IT support and cybersecurity solutions for businesses across London and the UK.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Knowledge Base</h4>
+                    <ul class="footer-links">
+                        <li><a href="../knowledge.html">All Guides</a></li>
+                        <li><a href="two-factor-authentication-setup.html">Two-Factor Authentication</a></li>
+                        <li><a href="secure-passwords.html">Password Security</a></li>
+                        <li><a href="microsoft-365-setup.html">Microsoft 365</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

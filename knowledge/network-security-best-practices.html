@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Best Practices | BizzyOPS Knowledge Base</title>
+    <meta name="description" content="Essential security measures to protect your network infrastructure from threats and vulnerabilities. Complete guide to business network security.">
+    <link rel="icon" type="image/x-icon" href="../images/mascot-icon.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                <span>BizzyOPS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="../knowledge.html" class="nav-link active">Knowledge Base</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="tel:+44-020-8230-1647" class="nav-link sos">SOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="knowledge-article-page">
+        <header class="knowledge-header">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../knowledge.html">Knowledge Base</a>
+                    <span>→</span>
+                    <a href="../knowledge.html">Network Management</a>
+                    <span>→</span>
+                    <span>Network Security</span>
+                </nav>
+                
+                <div class="article-meta">
+                    <span class="category">Network Management</span>
+                    <span class="read-time">8 min read</span>
+                    <span class="updated">Updated: September 30, 2025</span>
+                </div>
+                
+                <h1>Network Security Best Practices</h1>
+                <p class="article-subtitle">Essential security measures to protect your network infrastructure from threats and vulnerabilities, ensuring business continuity and data protection.</p>
+                
+                <div class="article-actions">
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                        </svg>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="knowledge-content">
+            <img src="../images/network-solutions.jpg" alt="Network Security Infrastructure" class="article-image">
+            
+            <div class="container">
+                <div class="content-wrapper">
+                    <aside class="table-of-contents">
+                        <h3>Contents</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#fundamentals">Security Fundamentals</a></li>
+                                <li><a href="#firewall-configuration">Firewall Configuration</a></li>
+                                <li><a href="#network-segmentation">Network Segmentation</a></li>
+                                <li><a href="#wireless-security">Wireless Security</a></li>
+                                <li><a href="#monitoring">Network Monitoring</a></li>
+                                <li><a href="#access-control">Access Control</a></li>
+                                <li><a href="#vpn-security">VPN Security</a></li>
+                                <li><a href="#incident-response">Incident Response</a></li>
+                                <li><a href="#compliance">Compliance Standards</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <main class="article-content">
+                        <section id="fundamentals">
+                            <h2>Network Security Fundamentals</h2>
+                            <p>Network security encompasses the policies, practices, and technologies designed to protect your network infrastructure, data in transit, and connected devices from unauthorized access and cyber threats.</p>
+                            
+                            <div class="threat-landscape">
+                                <h3>Common Network Threats</h3>
+                                <div class="threats-grid">
+                                    <div class="threat-card high">
+                                        <h4>🔴 Ransomware</h4>
+                                        <p>Malicious software that encrypts network data and demands payment for decryption keys.</p>
+                                    </div>
+                                    <div class="threat-card high">
+                                        <h4>🔴 DDoS Attacks</h4>
+                                        <p>Distributed attacks that overwhelm network resources, causing service disruption.</p>
+                                    </div>
+                                    <div class="threat-card medium">
+                                        <h4>🟡 Man-in-the-Middle</h4>
+                                        <p>Interception of network communications to steal sensitive information.</p>
+                                    </div>
+                                    <div class="threat-card medium">
+                                        <h4>🟡 Network Intrusion</h4>
+                                        <p>Unauthorized access to network systems and resources by external attackers.</p>
+                                    </div>
+                                    <div class="threat-card low">
+                                        <h4>🟢 Insider Threats</h4>
+                                        <p>Security risks from employees or partners with authorized network access.</p>
+                                    </div>
+                                    <div class="threat-card low">
+                                        <h4>🟢 IoT Vulnerabilities</h4>
+                                        <p>Security weaknesses in Internet of Things devices connected to the network.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Defense in Depth Strategy</h3>
+                            <p>Implement multiple layers of security controls to protect against various attack vectors:</p>
+                            <ul>
+                                <li><strong>Perimeter Security:</strong> Firewalls, intrusion detection/prevention systems</li>
+                                <li><strong>Network Segmentation:</strong> VLANs, subnetting, zero-trust architecture</li>
+                                <li><strong>Access Controls:</strong> Authentication, authorization, and accounting (AAA)</li>
+                                <li><strong>Endpoint Protection:</strong> Antivirus, endpoint detection and response (EDR)</li>
+                                <li><strong>Data Protection:</strong> Encryption, data loss prevention (DLP)</li>
+                                <li><strong>Monitoring:</strong> SIEM, network monitoring, threat intelligence</li>
+                            </ul>
+                        </section>
+
+                        <section id="firewall-configuration">
+                            <h2>Firewall Configuration and Management</h2>
+                            <p>Firewalls serve as the first line of defense, controlling traffic flow between network segments and external networks.</p>
+
+                            <h3>Firewall Types and Deployment</h3>
+                            <div class="firewall-types">
+                                <div class="firewall-card">
+                                    <h4>Network Firewalls</h4>
+                                    <ul>
+                                        <li>Hardware-based perimeter protection</li>
+                                        <li>High-performance packet filtering</li>
+                                        <li>Suitable for large networks</li>
+                                        <li>Examples: Cisco ASA, Fortinet FortiGate</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="firewall-card">
+                                    <h4>Next-Generation Firewalls (NGFW)</h4>
+                                    <ul>
+                                        <li>Application-aware filtering</li>
+                                        <li>Intrusion prevention system (IPS)</li>
+                                        <li>Deep packet inspection</li>
+                                        <li>Examples: Palo Alto, SonicWall</li>
+                                    </ul>
+                                </div>
+
+                                <div class="firewall-card">
+                                    <h4>Cloud Firewalls</h4>
+                                    <ul>
+                                        <li>Software-defined network protection</li>
+                                        <li>Scalable and flexible deployment</li>
+                                        <li>Integration with cloud services</li>
+                                        <li>Examples: AWS WAF, Azure Firewall</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Firewall Rule Configuration</h3>
+                            <div class="rule-best-practices">
+                                <h4>✅ Best Practices</h4>
+                                <ul>
+                                    <li><strong>Default Deny:</strong> Block all traffic by default, allow only necessary connections</li>
+                                    <li><strong>Least Privilege:</strong> Grant minimum required access for business functions</li>
+                                    <li><strong>Regular Reviews:</strong> Audit and update rules quarterly</li>
+                                    <li><strong>Documentation:</strong> Maintain detailed rule documentation and change logs</li>
+                                    <li><strong>Testing:</strong> Test rule changes in staging environment first</li>
+                                </ul>
+
+                                <h4>❌ Common Mistakes</h4>
+                                <ul>
+                                    <li>Overly permissive "any-to-any" rules</li>
+                                    <li>Unused or redundant rules</li>
+                                    <li>Insufficient logging and monitoring</li>
+                                    <li>Inadequate rule ordering and optimization</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="network-segmentation">
+                            <h2>Network Segmentation Strategies</h2>
+                            <p>Network segmentation divides your network into smaller, isolated segments to limit the spread of threats and improve security control.</p>
+
+                            <h3>Segmentation Approaches</h3>
+                            <div class="segmentation-methods">
+                                <div class="method-card">
+                                    <h4>VLAN Segmentation</h4>
+                                    <p>Logical separation using Virtual LANs</p>
+                                    <ul>
+                                        <li>Cost-effective implementation</li>
+                                        <li>Flexible network management</li>
+                                        <li>Broadcast domain isolation</li>
+                                        <li>Easy reconfiguration</li>
+                                    </ul>
+                                </div>
+
+                                <div class="method-card">
+                                    <h4>Physical Segmentation</h4>
+                                    <p>Hardware-based network separation</p>
+                                    <ul>
+                                        <li>Maximum security isolation</li>
+                                        <li>Higher implementation cost</li>
+                                        <li>Suitable for critical systems</li>
+                                        <li>Air-gapped networks</li>
+                                    </ul>
+                                </div>
+
+                                <div class="method-card">
+                                    <h4>Micro-Segmentation</h4>
+                                    <p>Granular, software-defined segmentation</p>
+                                    <ul>
+                                        <li>Application-level controls</li>
+                                        <li>Zero-trust architecture</li>
+                                        <li>Dynamic policy enforcement</li>
+                                        <li>Cloud-native approach</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Segmentation Design Principles</h3>
+                            <ol>
+                                <li><strong>Trust Zones:</strong> Group systems with similar security requirements</li>
+                                <li><strong>Data Classification:</strong> Segment based on data sensitivity levels</li>
+                                <li><strong>User Roles:</strong> Separate networks by user access requirements</li>
+                                <li><strong>Compliance:</strong> Isolate regulated data and systems</li>
+                                <li><strong>Internet Access:</strong> Create DMZ for public-facing services</li>
+                            </ol>
+
+                            <div class="example-segmentation">
+                                <h4>Example Network Segments</h4>
+                                <ul>
+                                    <li><strong>Management Network:</strong> Network infrastructure and monitoring systems</li>
+                                    <li><strong>Production Network:</strong> Business-critical applications and databases</li>
+                                    <li><strong>Development Network:</strong> Development and testing environments</li>
+                                    <li><strong>Guest Network:</strong> Visitor and contractor access</li>
+                                    <li><strong>IoT Network:</strong> Internet of Things devices</li>
+                                    <li><strong>DMZ:</strong> Web servers, email servers, public services</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="wireless-security">
+                            <h2>Wireless Network Security</h2>
+                            <p>Wireless networks require special security considerations due to their broadcast nature and accessibility.</p>
+
+                            <h3>Wi-Fi Security Standards</h3>
+                            <div class="wifi-standards">
+                                <div class="standard-card deprecated">
+                                    <h4>WEP (Deprecated)</h4>
+                                    <p>Wired Equivalent Privacy - No longer secure, should be disabled</p>
+                                </div>
+                                
+                                <div class="standard-card legacy">
+                                    <h4>WPA/WPA2-PSK</h4>
+                                    <p>Wi-Fi Protected Access - Suitable for small offices with strong passwords</p>
+                                </div>
+
+                                <div class="standard-card recommended">
+                                    <h4>WPA2-Enterprise</h4>
+                                    <p>802.1X authentication - Recommended for business environments</p>
+                                </div>
+
+                                <div class="standard-card best">
+                                    <h4>WPA3</h4>
+                                    <p>Latest standard with enhanced security - Best choice for new deployments</p>
+                                </div>
+                            </div>
+
+                            <h3>Enterprise Wi-Fi Security Configuration</h3>
+                            <ol>
+                                <li><strong>Network Segregation:</strong> Separate guest and corporate Wi-Fi networks</li>
+                                <li><strong>Strong Authentication:</strong> Implement 802.1X with RADIUS authentication</li>
+                                <li><strong>Certificate Management:</strong> Use digital certificates for device authentication</li>
+                                <li><strong>Access Point Security:</strong> Change default passwords, update firmware regularly</li>
+                                <li><strong>Monitoring:</strong> Deploy wireless intrusion detection systems (WIDS)</li>
+                                <li><strong>Coverage Control:</strong> Optimize signal strength to minimize exposure</li>
+                            </ol>
+
+                            <div class="wireless-threats">
+                                <h4>Common Wireless Threats</h4>
+                                <ul>
+                                    <li><strong>Rogue Access Points:</strong> Unauthorized Wi-Fi hotspots on your network</li>
+                                    <li><strong>Evil Twin Attacks:</strong> Fake access points mimicking legitimate ones</li>
+                                    <li><strong>Wi-Fi Eavesdropping:</strong> Interception of wireless communications</li>
+                                    <li><strong>WPS Attacks:</strong> Exploitation of Wi-Fi Protected Setup vulnerabilities</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="monitoring">
+                            <h2>Network Security Monitoring</h2>
+                            <p>Continuous monitoring is essential for detecting, analyzing, and responding to security threats in real-time.</p>
+
+                            <h3>Monitoring Components</h3>
+                            <div class="monitoring-stack">
+                                <div class="monitor-layer">
+                                    <h4>Network Traffic Analysis</h4>
+                                    <ul>
+                                        <li>Network flow monitoring (NetFlow, sFlow)</li>
+                                        <li>Deep packet inspection (DPI)</li>
+                                        <li>Bandwidth utilization tracking</li>
+                                        <li>Protocol analysis and anomaly detection</li>
+                                    </ul>
+                                </div>
+
+                                <div class="monitor-layer">
+                                    <h4>Security Information and Event Management (SIEM)</h4>
+                                    <ul>
+                                        <li>Log aggregation and correlation</li>
+                                        <li>Real-time security alerting</li>
+                                        <li>Compliance reporting</li>
+                                        <li>Forensic analysis capabilities</li>
+                                    </ul>
+                                </div>
+
+                                <div class="monitor-layer">
+                                    <h4>Intrusion Detection/Prevention (IDS/IPS)</h4>
+                                    <ul>
+                                        <li>Signature-based threat detection</li>
+                                        <li>Behavioral analysis</li>
+                                        <li>Automated threat blocking</li>
+                                        <li>Advanced persistent threat (APT) detection</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Key Performance Indicators (KPIs)</h3>
+                            <ul>
+                                <li><strong>Mean Time to Detection (MTTD):</strong> Time to identify security incidents</li>
+                                <li><strong>Mean Time to Response (MTTR):</strong> Time to respond to and contain threats</li>
+                                <li><strong>False Positive Rate:</strong> Percentage of benign activities flagged as threats</li>
+                                <li><strong>Network Availability:</strong> Uptime and service availability metrics</li>
+                                <li><strong>Compliance Score:</strong> Adherence to security policies and regulations</li>
+            </ul>
+                        </section>
+
+                        <section id="access-control">
+                            <h2>Network Access Control (NAC)</h2>
+                            <p>NAC solutions ensure that only authorized and compliant devices can access your network resources.</p>
+
+                            <h3>NAC Implementation Models</h3>
+                            <div class="nac-models">
+                                <div class="model-card">
+                                    <h4>Pre-Admission Control</h4>
+                                    <p>Devices are assessed before network access is granted</p>
+                                    <ul>
+                                        <li>Device identification and authentication</li>
+                                        <li>Security posture assessment</li>
+                                        <li>Policy compliance checking</li>
+                                        <li>Quarantine for non-compliant devices</li>
+                                    </ul>
+                                </div>
+
+                                <div class="model-card">
+                                    <h4>Post-Admission Control</h4>
+                                    <p>Continuous monitoring after network access is granted</p>
+                                    <ul>
+                                        <li>Ongoing device behavior monitoring</li>
+                                        <li>Dynamic access adjustment</li>
+                                        <li>Threat response and isolation</li>
+                                        <li>Session management and logging</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Zero Trust Network Access (ZTNA)</h3>
+                            <p>Modern approach that never trusts, always verifies:</p>
+                            <ol>
+                                <li><strong>Identity Verification:</strong> Multi-factor authentication for all users</li>
+                                <li><strong>Device Trust:</strong> Device health and compliance verification</li>
+                                <li><strong>Least Privilege Access:</strong> Minimum necessary network permissions</li>
+                                <li><strong>Continuous Monitoring:</strong> Real-time behavior analysis</li>
+                                <li><strong>Encrypted Communications:</strong> End-to-end encryption for all traffic</li>
+                            </ol>
+                        </section>
+
+                        <section id="vpn-security">
+                            <h2>VPN Security Best Practices</h2>
+                            <p>Virtual Private Networks provide secure remote access but require proper configuration and management.</p>
+
+                            <h3>VPN Technology Comparison</h3>
+                            <div class="vpn-comparison">
+                                <table>
+                                    <tr>
+                                        <th>VPN Type</th>
+                                        <th>Security Level</th>
+                                        <th>Performance</th>
+                                        <th>Best Use Case</th>
+                                    </tr>
+                                    <tr>
+                                        <td>IPSec</td>
+                                        <td>High</td>
+                                        <td>Good</td>
+                                        <td>Site-to-site connections</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SSL/TLS VPN</td>
+                                        <td>High</td>
+                                        <td>Moderate</td>
+                                        <td>Remote user access</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WireGuard</td>
+                                        <td>High</td>
+                                        <td>Excellent</td>
+                                        <td>Modern deployments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PPTP</td>
+                                        <td>Low</td>
+                                        <td>Good</td>
+                                        <td>Legacy systems (not recommended)</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <h3>VPN Security Configuration</h3>
+                            <ul>
+                                <li><strong>Strong Encryption:</strong> Use AES-256 or equivalent encryption standards</li>
+                                <li><strong>Perfect Forward Secrecy:</strong> Generate new keys for each session</li>
+                                <li><strong>Multi-Factor Authentication:</strong> Require additional authentication factors</li>
+                                <li><strong>Split Tunneling Control:</strong> Define which traffic uses the VPN</li>
+                                <li><strong>Kill Switch:</strong> Prevent data leakage if VPN connection fails</li>
+                                <li><strong>Regular Updates:</strong> Keep VPN software and certificates current</li>
+                            </ul>
+                        </section>
+
+                        <section id="incident-response">
+                            <h2>Network Security Incident Response</h2>
+                            <p>Having a well-defined incident response plan is crucial for minimizing the impact of security breaches.</p>
+
+                            <h3>Incident Response Process</h3>
+                            <div class="incident-phases">
+                                <div class="phase-card">
+                                    <h4>1. Preparation</h4>
+                                    <ul>
+                                        <li>Develop response procedures</li>
+                                        <li>Train response team</li>
+                                        <li>Establish communication channels</li>
+                                        <li>Prepare forensic tools</li>
+                                    </ul>
+                                </div>
+
+                                <div class="phase-card">
+                                    <h4>2. Identification</h4>
+                                    <ul>
+                                        <li>Detect security incidents</li>
+                                        <li>Assess incident scope</li>
+                                        <li>Document initial findings</li>
+                                        <li>Activate response team</li>
+                                    </ul>
+                                </div>
+
+                                <div class="phase-card">
+                                    <h4>3. Containment</h4>
+                                    <ul>
+                                        <li>Isolate affected systems</li>
+                                        <li>Prevent lateral movement</li>
+                                        <li>Preserve evidence</li>
+                                        <li>Implement short-term fixes</li>
+                                    </ul>
+                                </div>
+
+                                <div class="phase-card">
+                                    <h4>4. Eradication</h4>
+                                    <ul>
+                                        <li>Remove malware and threats</li>
+                                        <li>Close attack vectors</li>
+                                        <li>Apply security patches</li>
+                                        <li>Strengthen defenses</li>
+                                    </ul>
+                                </div>
+
+                                <div class="phase-card">
+                                    <h4>5. Recovery</h4>
+                                    <ul>
+                                        <li>Restore affected systems</li>
+                                        <li>Implement additional monitoring</li>
+                                        <li>Validate system integrity</li>
+                                        <li>Resume normal operations</li>
+                                    </ul>
+                                </div>
+
+                                <div class="phase-card">
+                                    <h4>6. Lessons Learned</h4>
+                                    <ul>
+                                        <li>Conduct post-incident review</li>
+                                        <li>Update security policies</li>
+                                        <li>Improve detection capabilities</li>
+                                        <li>Document recommendations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="compliance">
+                            <h2>Compliance and Regulatory Standards</h2>
+                            <p>Many industries have specific network security requirements that organizations must meet.</p>
+
+                            <div class="compliance-frameworks">
+                                <div class="framework-card">
+                                    <h4>ISO 27001/27002</h4>
+                                    <p>International standard for information security management</p>
+                                    <ul>
+                                        <li>Comprehensive security controls</li>
+                                        <li>Risk-based approach</li>
+                                        <li>Continuous improvement process</li>
+                                        <li>Global recognition</li>
+                                    </ul>
+                                </div>
+
+                                <div class="framework-card">
+                                    <h4>NIST Cybersecurity Framework</h4>
+                                    <p>US-developed framework for managing cybersecurity risk</p>
+                                    <ul>
+                                        <li>Identify, Protect, Detect, Respond, Recover</li>
+                                        <li>Flexible implementation</li>
+                                        <li>Industry-agnostic approach</li>
+                                        <li>Widely adopted standard</li>
+                                    </ul>
+                                </div>
+
+                                <div class="framework-card">
+                                    <h4>PCI DSS</h4>
+                                    <p>Payment Card Industry Data Security Standard</p>
+                                    <ul>
+                                        <li>Network segmentation requirements</li>
+                                        <li>Strong access controls</li>
+                                        <li>Regular monitoring and testing</li>
+                                        <li>Information security policy</li>
+                                    </ul>
+                                </div>
+
+                                <div class="framework-card">
+                                    <h4>GDPR</h4>
+                                    <p>General Data Protection Regulation (EU)</p>
+                                    <ul>
+                                        <li>Data protection by design</li>
+                                        <li>Breach notification requirements</li>
+                                        <li>Technical and organizational measures</li>
+                                        <li>Privacy impact assessments</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="contact-support">
+                                <h4>Need Network Security Assessment?</h4>
+                                <p>Our certified security experts can evaluate your network security posture and help implement best practices.</p>
+                                <a href="../contact.html" class="btn btn-primary">Get Security Assessment</a>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                        <span>BizzyOPS</span>
+                    </div>
+                    <p>Professional IT support and cybersecurity solutions for businesses across London and the UK.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Knowledge Base</h4>
+                    <ul class="footer-links">
+                        <li><a href="../knowledge.html">All Guides</a></li>
+                        <li><a href="two-factor-authentication-setup.html">Two-Factor Authentication</a></li>
+                        <li><a href="secure-passwords.html">Password Security</a></li>
+                        <li><a href="microsoft-365-setup.html">Microsoft 365</a></li>
+                        <li><a href="network-security-best-practices.html">Network Security</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

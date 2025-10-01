@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Strategy Guide | BizzyOPS Knowledge Base</title>
+    <meta name="description" content="Comprehensive guide to creating an effective backup strategy that protects your business data from loss, corruption, and ransomware attacks.">
+    <link rel="icon" type="image/x-icon" href="../images/mascot-icon.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                <span>BizzyOPS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="../blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="../knowledge.html" class="nav-link active">Knowledge Base</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="tel:+44-020-8230-1647" class="nav-link sos">SOS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="knowledge-article-page">
+        <header class="knowledge-header">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../knowledge.html">Knowledge Base</a>
+                    <span>→</span>
+                    <a href="../knowledge.html">System Administration</a>
+                    <span>→</span>
+                    <span>Backup Strategy</span>
+                </nav>
+                
+                <div class="article-meta">
+                    <span class="category">System Administration</span>
+                    <span class="read-time">12 min read</span>
+                    <span class="updated">Updated: September 30, 2025</span>
+                </div>
+                
+                <h1>Backup Strategy Guide</h1>
+                <p class="article-subtitle">Comprehensive guide to creating an effective backup strategy that protects your business data from loss, corruption, and ransomware attacks.</p>
+                
+                <div class="article-actions">
+                    <button onclick="window.print()" class="btn btn-secondary">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+                        </svg>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="knowledge-content">
+            <img src="../images/backup-strategy.jpg" alt="Data Backup and Recovery Strategy" class="article-image">
+            
+            <div class="container">
+                <div class="content-wrapper">
+                    <aside class="table-of-contents">
+                        <h3>Contents</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#importance">Why Backups Matter</a></li>
+                                <li><a href="#backup-types">Types of Backups</a></li>
+                                <li><a href="#3-2-1-rule">The 3-2-1 Rule</a></li>
+                                <li><a href="#strategy-development">Strategy Development</a></li>
+                                <li><a href="#backup-solutions">Backup Solutions</a></li>
+                                <li><a href="#testing">Testing and Validation</a></li>
+                                <li><a href="#ransomware-protection">Ransomware Protection</a></li>
+                                <li><a href="#implementation">Implementation Plan</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <main class="article-content">
+                        <section id="importance">
+                            <h2>Why Backups Matter for Your Business</h2>
+                            <p>Data loss can be catastrophic for businesses. Whether caused by hardware failure, human error, cyberattacks, or natural disasters, losing critical business data can result in significant financial loss, regulatory violations, and damage to your reputation.</p>
+                            
+                            <div class="statistics-box">
+                                <h3>Data Loss Statistics</h3>
+                                <ul>
+                                    <li>93% of companies that lost their data for 10 days or more filed for bankruptcy within one year</li>
+                                    <li>50% of businesses that found themselves without data management for this same time period filed for bankruptcy immediately</li>
+                                    <li>70% of small firms go out of business within a year of a large data loss incident</li>
+                                    <li>Only 6% of companies survive after losing their data and not having a backup strategy</li>
+                                </ul>
+                            </div>
+
+                            <h3>Common Causes of Data Loss</h3>
+                            <div class="data-loss-causes">
+                                <div class="cause-card">
+                                    <h4>🔧 Hardware Failure (40%)</h4>
+                                    <p>Hard drive crashes, server failures, and component malfunctions</p>
+                                </div>
+                                <div class="cause-card">
+                                    <h4>👤 Human Error (30%)</h4>
+                                    <p>Accidental deletion, file corruption, and configuration mistakes</p>
+                                </div>
+                                <div class="cause-card">
+                                    <h4>🦠 Malware & Ransomware (20%)</h4>
+                                    <p>Viruses, ransomware attacks, and malicious software</p>
+                                </div>
+                                <div class="cause-card">
+                                    <h4>🌪️ Natural Disasters (10%)</h4>
+                                    <p>Floods, fires, earthquakes, and power outages</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="backup-types">
+                            <h2>Types of Backups</h2>
+                            <p>Understanding different backup types helps you choose the right strategy for your business needs and recovery time objectives.</p>
+
+                            <div class="backup-types-grid">
+                                <div class="backup-type">
+                                    <h3>Full Backup</h3>
+                                    <p><strong>Description:</strong> Complete copy of all selected data</p>
+                                    <p><strong>Pros:</strong> Fastest recovery, complete data protection</p>
+                                    <p><strong>Cons:</strong> Longest backup time, highest storage requirements</p>
+                                    <p><strong>Best for:</strong> Weekly or monthly comprehensive backups</p>
+                                </div>
+
+                                <div class="backup-type">
+                                    <h3>Incremental Backup</h3>
+                                    <p><strong>Description:</strong> Only backs up data changed since last backup</p>
+                                    <p><strong>Pros:</strong> Fastest backup, minimal storage usage</p>
+                                    <p><strong>Cons:</strong> Slower recovery, requires all incremental backups</p>
+                                    <p><strong>Best for:</strong> Daily backups with frequent changes</p>
+                                </div>
+
+                                <div class="backup-type">
+                                    <h3>Differential Backup</h3>
+                                    <p><strong>Description:</strong> Backs up data changed since last full backup</p>
+                                    <p><strong>Pros:</strong> Faster recovery than incremental, moderate storage</p>
+                                    <p><strong>Cons:</strong> Backup size grows over time</p>
+                                    <p><strong>Best for:</strong> Balance between speed and storage efficiency</p>
+                                </div>
+
+                                <div class="backup-type">
+                                    <h3>Snapshot Backup</h3>
+                                    <p><strong>Description:</strong> Point-in-time copy of data state</p>
+                                    <p><strong>Pros:</strong> Instant backup, minimal downtime</p>
+                                    <p><strong>Cons:</strong> Requires compatible storage systems</p>
+                                    <p><strong>Best for:</strong> Critical systems requiring minimal downtime</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="3-2-1-rule">
+                            <h2>The 3-2-1 Backup Rule</h2>
+                            <p>The industry-standard 3-2-1 rule provides a robust framework for backup strategy design:</p>
+
+                            <div class="rule-321">
+                                <div class="rule-item">
+                                    <div class="rule-number">3</div>
+                                    <div class="rule-content">
+                                        <h3>Keep 3 Copies of Important Data</h3>
+                                        <p>One primary copy plus two backup copies ensure redundancy and reduce the risk of total data loss.</p>
+                                    </div>
+                                </div>
+
+                                <div class="rule-item">
+                                    <div class="rule-number">2</div>
+                                    <div class="rule-content">
+                                        <h3>Store Backups on 2 Different Media Types</h3>
+                                        <p>Use different storage technologies (e.g., disk, tape, cloud) to protect against media-specific failures.</p>
+                                    </div>
+                                </div>
+
+                                <div class="rule-item">
+                                    <div class="rule-number">1</div>
+                                    <div class="rule-content">
+                                        <h3>Keep 1 Backup Copy Offsite</h3>
+                                        <p>Store at least one backup in a different physical location to protect against local disasters.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modern-321">
+                                <h3>Modern 3-2-1-1-0 Rule</h3>
+                                <p>Enhanced version for today's threat landscape:</p>
+                                <ul>
+                                    <li><strong>3</strong> copies of data</li>
+                                    <li><strong>2</strong> different media types</li>
+                                    <li><strong>1</strong> offsite backup</li>
+                                    <li><strong>1</strong> offline or immutable backup</li>
+                                    <li><strong>0</strong> errors in backup verification</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="strategy-development">
+                            <h2>Developing Your Backup Strategy</h2>
+
+                            <h3>Step 1: Data Classification and Prioritization</h3>
+                            <div class="data-classification">
+                                <div class="classification-tier critical">
+                                    <h4>Critical Data (Tier 1)</h4>
+                                    <p>Business-essential data that requires immediate recovery</p>
+                                    <ul>
+                                        <li>Customer databases</li>
+                                        <li>Financial records</li>
+                                        <li>Active projects</li>
+                                        <li>Configuration files</li>
+                                    </ul>
+                                    <p><strong>RTO:</strong> 1-4 hours | <strong>RPO:</strong> 15 minutes - 1 hour</p>
+                                </div>
+
+                                <div class="classification-tier important">
+                                    <h4>Important Data (Tier 2)</h4>
+                                    <p>Significant business impact if lost, but not immediately critical</p>
+                                    <ul>
+                                        <li>Email archives</li>
+                                        <li>Historical data</li>
+                                        <li>Documentation</li>
+                                        <li>Non-active projects</li>
+                                    </ul>
+                                    <p><strong>RTO:</strong> 4-24 hours | <strong>RPO:</strong> 1-4 hours</p>
+                                </div>
+
+                                <div class="classification-tier standard">
+                                    <h4>Standard Data (Tier 3)</h4>
+                                    <p>Useful but replaceable data with minimal business impact</p>
+                                    <ul>
+                                        <li>Software installations</li>
+                                        <li>Temporary files</li>
+                                        <li>Cache data</li>
+                                        <li>Logs and analytics</li>
+                                    </ul>
+                                    <p><strong>RTO:</strong> 24-72 hours | <strong>RPO:</strong> 4-24 hours</p>
+                                </div>
+                            </div>
+
+                            <h3>Step 2: Define Recovery Objectives</h3>
+                            <ul>
+                                <li><strong>Recovery Time Objective (RTO):</strong> Maximum acceptable downtime</li>
+                                <li><strong>Recovery Point Objective (RPO):</strong> Maximum acceptable data loss</li>
+                                <li><strong>Recovery Level Objective (RLO):</strong> Granularity of recovery (file, folder, system)</li>
+                            </ul>
+
+                            <h3>Step 3: Choose Backup Frequency</h3>
+                            <div class="backup-schedule">
+                                <h4>Recommended Schedule</h4>
+                                <ul>
+                                    <li><strong>Critical Systems:</strong> Continuous or hourly backups</li>
+                                    <li><strong>Database Servers:</strong> Transaction log backups every 15 minutes</li>
+                                    <li><strong>File Servers:</strong> Daily incremental, weekly full backups</li>
+                                    <li><strong>Email Systems:</strong> Continuous replication plus daily backups</li>
+                                    <li><strong>Workstations:</strong> Daily or weekly depending on usage</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="backup-solutions">
+                            <h2>Backup Solutions and Technologies</h2>
+
+                            <h3>Local Backup Solutions</h3>
+                            <div class="solution-type">
+                                <h4>Network Attached Storage (NAS)</h4>
+                                <p><strong>Best for:</strong> Small to medium businesses, file-level backups</p>
+                                <p><strong>Pros:</strong> Cost-effective, easy management, good performance</p>
+                                <p><strong>Cons:</strong> Limited scalability, single point of failure</p>
+                            </div>
+
+                            <div class="solution-type">
+                                <h4>Tape Backup Systems</h4>
+                                <p><strong>Best for:</strong> Long-term archival, compliance requirements</p>
+                                <p><strong>Pros:</strong> Low cost per GB, offline storage, long lifespan</p>
+                                <p><strong>Cons:</strong> Slower access times, manual handling required</p>
+                            </div>
+
+                            <h3>Cloud Backup Solutions</h3>
+                            <div class="cloud-providers">
+                                <div class="provider-card">
+                                    <h4>Amazon Web Services (AWS)</h4>
+                                    <ul>
+                                        <li>S3 for object storage</li>
+                                        <li>Glacier for archival</li>
+                                        <li>AWS Backup for centralized backup</li>
+                                        <li>Cross-region replication</li>
+                                    </ul>
+                                </div>
+
+                                <div class="provider-card">
+                                    <h4>Microsoft Azure</h4>
+                                    <ul>
+                                        <li>Azure Backup service</li>
+                                        <li>Blob storage for files</li>
+                                        <li>Site Recovery for VMs</li>
+                                        <li>Integration with Office 365</li>
+                                    </ul>
+                                </div>
+
+                                <div class="provider-card">
+                                    <h4>Google Cloud Platform</h4>
+                                    <ul>
+                                        <li>Cloud Storage</li>
+                                        <li>Persistent disk snapshots</li>
+                                        <li>Nearline and Coldline storage</li>
+                                        <li>Multi-regional redundancy</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Hybrid Solutions</h3>
+                            <p>Combine local and cloud backup for optimal performance and protection:</p>
+                            <ul>
+                                <li><strong>Local backup for fast recovery:</strong> Quick restore of recent data</li>
+                                <li><strong>Cloud backup for disaster recovery:</strong> Protection against local disasters</li>
+                                <li><strong>Tiered storage:</strong> Automatic movement of older backups to cheaper storage</li>
+                                <li><strong>Bandwidth optimization:</strong> Incremental sync reduces upload time</li>
+                            </ul>
+                        </section>
+
+                        <section id="testing">
+                            <h2>Backup Testing and Validation</h2>
+                            <p>Regular testing ensures your backups will work when you need them most. An untested backup is not a backup.</p>
+
+                            <h3>Testing Methodology</h3>
+                            <div class="testing-types">
+                                <div class="test-type">
+                                    <h4>File-Level Restore Tests</h4>
+                                    <ul>
+                                        <li>Monthly random file restoration</li>
+                                        <li>Verify file integrity and accessibility</li>
+                                        <li>Test different file types and sizes</li>
+                                        <li>Document restore times</li>
+                                    </ul>
+                                </div>
+
+                                <div class="test-type">
+                                    <h4>System-Level Restore Tests</h4>
+                                    <ul>
+                                        <li>Quarterly full system restoration</li>
+                                        <li>Test on isolated test environment</li>
+                                        <li>Verify application functionality</li>
+                                        <li>Validate data consistency</li>
+                                    </ul>
+                                </div>
+
+                                <div class="test-type">
+                                    <h4>Disaster Recovery Drills</h4>
+                                    <ul>
+                                        <li>Annual full DR exercises</li>
+                                        <li>Simulate various disaster scenarios</li>
+                                        <li>Test team response procedures</li>
+                                        <li>Measure actual vs. target RTO/RPO</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Validation Checklist</h3>
+                            <ul>
+                                <li>✅ Backup completion notifications received</li>
+                                <li>✅ No error messages in backup logs</li>
+                                <li>✅ Expected data volume matches backup size</li>
+                                <li>✅ Random file restoration successful</li>
+                                <li>✅ Backup integrity verification passed</li>
+                                <li>✅ Offsite backup synchronization confirmed</li>
+                                <li>✅ Recovery procedures documented and tested</li>
+                            </ul>
+                        </section>
+
+                        <section id="ransomware-protection">
+                            <h2>Ransomware-Proof Backup Strategies</h2>
+                            <p>Modern backup strategies must specifically defend against ransomware attacks that can encrypt or delete backup files.</p>
+
+                            <h3>Immutable Backups</h3>
+                            <div class="immutable-features">
+                                <div class="feature-card">
+                                    <h4>Write-Once, Read-Many (WORM)</h4>
+                                    <p>Data cannot be modified or deleted once written, providing ransomware protection</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4>Legal Hold</h4>
+                                    <p>Prevents backup deletion even by administrators during specified retention periods</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4>Air-Gapped Backups</h4>
+                                    <p>Physically disconnected storage that cannot be accessed by network-based attacks</p>
+                                </div>
+                            </div>
+
+                            <h3>Anti-Ransomware Best Practices</h3>
+                            <ul>
+                                <li><strong>Segregated Backup Networks:</strong> Isolate backup infrastructure from production networks</li>
+                                <li><strong>Multi-Factor Authentication:</strong> Protect backup admin accounts with MFA</li>
+                                <li><strong>Version Retention:</strong> Maintain multiple versions to recover from encrypted backups</li>
+                                <li><strong>Offline Copies:</strong> Keep recent backups on disconnected storage</li>
+                                <li><strong>Backup Monitoring:</strong> Alert on unusual backup activity or failures</li>
+                                <li><strong>Zero Trust Access:</strong> Limit backup system access to authorized personnel only</li>
+                            </ul>
+                        </section>
+
+                        <section id="implementation">
+                            <h2>Implementation Plan</h2>
+
+                            <h3>Phase 1: Assessment and Planning (Weeks 1-2)</h3>
+                            <ul>
+                                <li>Inventory all data and systems</li>
+                                <li>Classify data by criticality and sensitivity</li>
+                                <li>Define RTO/RPO objectives for each system</li>
+                                <li>Assess current backup capabilities and gaps</li>
+                                <li>Select appropriate backup solutions</li>
+                            </ul>
+
+                            <h3>Phase 2: Infrastructure Setup (Weeks 3-4)</h3>
+                            <ul>
+                                <li>Procure and configure backup hardware/software</li>
+                                <li>Set up cloud backup accounts and storage</li>
+                                <li>Configure backup agents on client systems</li>
+                                <li>Establish backup networks and security</li>
+                                <li>Create backup schedules and policies</li>
+                            </ul>
+
+                            <h3>Phase 3: Deployment and Testing (Weeks 5-6)</h3>
+                            <ul>
+                                <li>Deploy backup solutions in pilot groups</li>
+                                <li>Perform initial full backups</li>
+                                <li>Test restore procedures</li>
+                                <li>Validate backup integrity and completeness</li>
+                                <li>Document procedures and train staff</li>
+                            </ul>
+
+                            <h3>Phase 4: Full Rollout (Weeks 7-8)</h3>
+                            <ul>
+                                <li>Deploy to remaining systems and users</li>
+                                <li>Monitor backup performance and success rates</li>
+                                <li>Establish ongoing maintenance procedures</li>
+                                <li>Create backup reporting and alerts</li>
+                                <li>Schedule regular testing and reviews</li>
+                            </ul>
+
+                            <div class="contact-support">
+                                <h4>Need Help with Backup Strategy?</h4>
+                                <p>Our backup and recovery specialists can design and implement a comprehensive backup solution for your business.</p>
+                                <a href="../contact.html" class="btn btn-primary">Get Backup Consultation</a>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/mascot-icon.png" alt="Bizzy OPS logo">
+                        <span>BizzyOPS</span>
+                    </div>
+                    <p>Professional IT support and cybersecurity solutions for businesses across London and the UK.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Knowledge Base</h4>
+                    <ul class="footer-links">
+                        <li><a href="../knowledge.html">All Guides</a></li>
+                        <li><a href="backup-strategy-guide.html">Backup Strategy</a></li>
+                        <li><a href="network-security-best-practices.html">Network Security</a></li>
+                        <li><a href="microsoft-365-setup.html">Microsoft 365</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
