@@ -190,7 +190,7 @@ Want to improve?
 
 ## 📝 License
 
-This project is for educational & demo purposes.  
+Fully Copyrighted and TradeMarked under the BizzyOPS Banner.  
 All original design & content belong to BizzyOPS.
 
 ---
