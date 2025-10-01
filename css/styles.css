@@ -61,6 +61,7 @@ ul {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    min-height: 70px;
 }
 
 .nav-logo {
@@ -181,12 +182,12 @@ ul {
 
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 10px);
     left: 50%;
     right: auto;
     transform: translateX(-50%) translateY(-10px);
     background: white;
-    width: clamp(400px, 60vw, 600px);
+    width: clamp(600px, 80vw, 800px);
     max-width: calc(100vw - 4rem);
     border-radius: clamp(8px, 1.5vw, 16px);
     box-shadow: 
@@ -196,9 +197,9 @@ ul {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: clamp(1.25rem, 2.5vw, 2rem);
+    padding: clamp(1.5rem, 2.5vw, 2rem);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: clamp(1.5rem, 2.5vw, 2rem);
     z-index: 1001;
     border: 1px solid #e5e7eb;
@@ -215,45 +216,20 @@ ul {
     transform: translateX(-50%) translateY(0);
 }
 
-/* Smart positioning to prevent off-screen dropdowns */
-@media (min-width: 769px) {
-    /* Right-side boundary protection */
-    .nav-item.dropdown:nth-last-child(-n+2) .dropdown-menu {
-        left: auto;
-        right: 0;
-        transform: translateX(0) translateY(-10px);
-    }
-    
-    .nav-item.dropdown:nth-last-child(-n+2):hover .dropdown-menu,
-    .nav-item.dropdown:nth-last-child(-n+2).active .dropdown-menu {
-        transform: translateX(0) translateY(0);
-    }
-    
-    /* Left-side boundary protection */
-    .nav-item.dropdown:first-child .dropdown-menu,
-    .nav-item.dropdown:nth-child(2) .dropdown-menu {
-        left: 0;
-        transform: translateX(0) translateY(-10px);
-    }
-    
-    .nav-item.dropdown:first-child:hover .dropdown-menu,
-    .nav-item.dropdown:first-child.active .dropdown-menu,
-    .nav-item.dropdown:nth-child(2):hover .dropdown-menu,
-    .nav-item.dropdown:nth-child(2).active .dropdown-menu {
-        transform: translateX(0) translateY(0);
-    }
-}
-
 /* Responsive positioning adjustments */
 @media (max-width: 1200px) {
+    .nav-container {
+        padding: clamp(0.75rem, 1.8vw, 1rem) clamp(1rem, 2.5vw, 1.5rem);
+    }
+    
     .nav-menu {
-        gap: clamp(0.5rem, 2vw, 1.5rem);
+        gap: clamp(0.75rem, 2vw, 1.5rem);
     }
     
     .dropdown-menu {
-        width: clamp(320px, 70vw, 550px);
+        width: clamp(500px, 70vw, 600px);
         max-width: calc(100vw - 2rem);
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: clamp(1rem, 2vw, 1.5rem);
         padding: clamp(1rem, 2vw, 1.5rem);
     }
@@ -261,15 +237,15 @@ ul {
 
 @media (max-width: 900px) {
     .nav-menu {
-        gap: clamp(0.25rem, 1vw, 0.75rem);
+        gap: clamp(0.5rem, 1.5vw, 1rem);
     }
     
     .dropdown-menu {
-        width: clamp(240px, 50vw, 400px);
-        max-width: calc(100vw - 1rem);
+        width: clamp(400px, 60vw, 500px);
+        max-width: calc(100vw - 2rem);
         grid-template-columns: repeat(2, 1fr);
-        gap: clamp(0.5rem, 1vw, 0.75rem);
-        padding: clamp(0.5rem, 1vw, 0.75rem);
+        gap: clamp(0.75rem, 1.5vw, 1rem);
+        padding: clamp(0.75rem, 1.5vw, 1rem);
     }
 }
 
@@ -326,29 +302,12 @@ ul {
     }
 }
 
-/* Critical fix for dropdown positioning on desktop */
+/* Smart positioning for edge cases */
 @media (min-width: 769px) {
-    /* Check if dropdown would overflow and adjust */
-    .nav-item.dropdown {
-        position: relative;
-    }
-    
-    .nav-item.dropdown .dropdown-menu {
-        /* Calculate available space and adjust positioning */
-        left: max(0px, min(0px, calc(100vw - 100% - 2rem)));
-        right: auto;
-    }
-    
-    /* For the Services dropdown specifically (usually 2nd item) */
-    .nav-item.dropdown:nth-child(2) .dropdown-menu {
-        left: 0;
-        right: auto;
-    }
-    
-    /* For dropdowns that might overflow on the right */
-    .nav-item.dropdown:nth-last-child(-n+2) .dropdown-menu {
-        left: auto;
-        right: 0;
+    /* For very wide screens, ensure dropdown doesn't go off-screen */
+    .dropdown-menu {
+        /* Prevent overflow on small viewports */
+        left: max(calc(50% - 400px), calc(-100vw + 100% + 2rem));
     }
 }
 
