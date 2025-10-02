@@ -1,7 +1,5 @@
 # 🌐 BizzyOPS Website
 
-A complete static website for **BizzyOPS**, built using pure HTML, CSS, and JavaScript — no frameworks, no fluff.
-
 ## 🚀 Features
 
 ### Pages
