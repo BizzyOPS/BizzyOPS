@@ -1,8 +1,43 @@
-# 🌐 BizzyOPS Website
+# 👋 Hey, I’m Zain (aka Dj OB1)
 
-A complete static website for **BizzyOPS**, built using pure HTML, CSS, and JavaScript — no frameworks, no fluff.
+💻 Senior IT Ops Analyst • Web Developer • Ethical Hacker • DJ
+🎯 Founder of **BizzyOPS** – Security-First Development & Automation  
 
-## 🚀 Features
+## 🚀 About Me  
+- 🔧 I script, code, and build apps, websites, and tools.  
+- 🕵️ Passionate about **ethical hacking, security, and automation**.  
+- 🎮 Love making **games, OS simulations, and creative code projects**.  
+
+## 🏢 About BizzyOPS  
+**BizzyOPS** is my company, focused on:  
+- ✅ Helpdesk Services  
+- ✅ Managed IT Services  
+- ✅ Cybersecurity for Businesses  
+- ✅ Backup and DR Solutions for Business  
+- ✅ Security-First Web Development  
+- ✅ DevOps & Automation Solutions  
+- ✅ Cybersecurity Awareness Tools & Games  
+- ✅ Custom Web Apps & Hosting Solutions  
+
+## 🛠️ Tech Stack  
+- **Languages:** JavaScript, TypeScript, Python, PowerShell, Bash, Git, React, Node.js, HTML, CSS, Tailwind, Vite  
+- **Web:** React, Node.js, HTML, CSS, Tailwind, Vite 
+- **Cloud/DevOps:** Docker, VPS Hosting, Windows Server 2022  
+- **Security:** PenTesting, SPF/DKIM/DMARC, OS Hardening  
+- **Creative:** Game Dev (Unity, Flutter), Custom Web Apps  
+
+## 🌐 Let’s Connect  
+- 🌍 Website: [BizzyOPS - IT Managed Services](https://bizzyops.com/)  
+- 💼 LinkedIn: [BizzyOPS](https://www.linkedin.com/in/bizzyops/)  
+- 🎧 Fun fact: I code with lo-fi beats and strong coffee.
+- 📩 Contact:  
+📧 Personal – **w3buk.dev@gmail.com**  
+📧 Business – **support@bizzyops.com** 
+
+⚡ **“Build like a hacker, think like a defender.”**  
+
+
+## 🌐 BizzyOPS Website
 
 ### Pages
 
