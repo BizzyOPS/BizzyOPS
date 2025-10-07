@@ -2505,6 +2505,11 @@ textarea:focus {
     outline-offset: 2px;
 }
 
+/* Honeypot field for spam protection */
+.honeypot {
+    display: none !important;
+}
+
 /* Knowledge Base Styles */
 .knowledge-base-section {
     padding: 4rem 0;

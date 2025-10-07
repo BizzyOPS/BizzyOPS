@@ -148,7 +148,7 @@ function initContactForm() {
                 return;
             }
             
-            // Submit form (in a real application, this would send to a server)
+            // Submit form to Web3Forms
             handleContactFormSubmission(formObject);
         });
         
@@ -243,7 +243,7 @@ function clearFieldError(field) {
     }
 }
 
-// Handle contact form submission
+// Handle contact form submission with Web3Forms
 function handleContactFormSubmission(formData) {
     // Show loading state
     const submitButton = document.querySelector('#contactForm button[type="submit"]');
@@ -251,14 +251,32 @@ function handleContactFormSubmission(formData) {
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
-        document.getElementById('contactForm').reset();
-        
+    // Prepare form data for Web3Forms
+    const form = document.getElementById('contactForm');
+    const formDataObj = new FormData(form);
+    
+    // Submit to Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataObj
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
+            document.getElementById('contactForm').reset();
+        } else {
+            throw new Error(data.message || 'Form submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('Form submission error:', error);
+        showToast('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
+    })
+    .finally(() => {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
-    }, 1500);
+    });
 }
 
 // Newsletter form functionality

@@ -110,7 +110,16 @@
                     <h2>Get Your Free Consultation</h2>
                     <p>Tell us about your IT needs and we'll provide a customized solution for your business.</p>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="0d5bf112-4013-425e-898e-1fa635af087a">
+                        
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="honeypot">
+                        
+                        <!-- Redirect after successful submission -->
+                        <input type="hidden" name="redirect" value="https://bizzyops.co.uk/contact.html?success=true">
+                        
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>

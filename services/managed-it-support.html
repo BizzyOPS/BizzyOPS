@@ -251,7 +251,12 @@
                 <h2>Ready to Get Started?</h2>
                 <p class="subtitle">Contact us today for a free consultation and discover how our managed IT support can transform your business operations.</p>
                 
-                <form class="contact-form" action="../contact.html" method="GET">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="0d5bf112-4013-425e-898e-1fa635af087a">
+                    <input type="checkbox" name="botcheck" class="honeypot">
+                    <input type="hidden" name="redirect" value="https://bizzyops.co.uk/services/managed-it-support.html?success=true">
+                    
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -345,7 +350,7 @@
                     <h4>Contact Info</h4>
                     <ul class="footer-contact">
                         <li>📞 +44 020 8230 1647</li>
-                        <li>📧 support@bizzyops.co.uk</li>
+                        <li>📧 support@bizzyops.com</li>
                         <li>📍 London, United Kingdom</li>
                     </ul>
                 </div>
