@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Tawk.to Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .status { margin: 20px 0; padding: 15px; border-radius: 5px; }
+        .loading { background: #f0f8ff; border: 1px solid #0066cc; }
+        .success { background: #f0fff0; border: 1px solid #00cc00; }
+        .error { background: #fff0f0; border: 1px solid #cc0000; }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Tawk.to Integration Test</h1>
+    <div id="status" class="status loading">Loading Tawk.to widget...</div>
+    
+    <h2>Debug Information:</h2>
+    <ul>
+        <li><strong>Widget ID:</strong> 68e5a8ef0b10cd194e33e894</li>
+        <li><strong>Property ID:</strong> 1j70hnqik</li>
+        <li><strong>Load URL:</strong> https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik</li>
+    </ul>
+
+    <h2>Troubleshooting Checklist:</h2>
+    <div id="checks">
+        <div id="script-load">🔄 Checking script load...</div>
+        <div id="tawk-api">🔄 Checking Tawk_API...</div>
+        <div id="widget-ready">🔄 Checking widget ready state...</div>
+        <div id="network-check">🔄 Checking network connectivity...</div>
+    </div>
+
+    <!--Start of Enhanced Tawk.to Script-->
+    <script type="text/javascript">
+    console.log('Starting Tawk.to initialization...');
+    
+    // Initialize Tawk_API
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+    
+    // Debug logging
+    Tawk_API.onLoad = function(){
+        console.log('✅ Tawk.to loaded successfully!');
+        document.getElementById('status').className = 'status success';
+        document.getElementById('status').innerHTML = '✅ Tawk.to widget loaded successfully!';
+        document.getElementById('widget-ready').innerHTML = '✅ Widget ready and loaded';
+    };
+    
+    Tawk_API.onStatusChange = function(status){
+        console.log('Tawk.to status changed to:', status);
+    };
+    
+    Tawk_API.onChatMaximized = function(){
+        console.log('Tawk.to chat maximized');
+    };
+    
+    Tawk_API.onChatMinimized = function(){
+        console.log('Tawk.to chat minimized');
+    };
+    
+    // Load the script
+    (function(){
+        try {
+            var s1 = document.createElement("script");
+            var s0 = document.getElementsByTagName("script")[0];
+            
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            
+            // Add load and error handlers
+            s1.onload = function() {
+                console.log('✅ Tawk.to script loaded from CDN');
+                document.getElementById('script-load').innerHTML = '✅ Script loaded successfully';
+            };
+            
+            s1.onerror = function() {
+                console.error('❌ Failed to load Tawk.to script');
+                document.getElementById('status').className = 'status error';
+                document.getElementById('status').innerHTML = '❌ Failed to load Tawk.to script';
+                document.getElementById('script-load').innerHTML = '❌ Script load failed';
+            };
+            
+            s0.parentNode.insertBefore(s1, s0);
+            
+            // Check if Tawk_API is available after a delay
+            setTimeout(function() {
+                if (typeof Tawk_API !== 'undefined' && Tawk_API.isChatOnline) {
+                    document.getElementById('tawk-api').innerHTML = '✅ Tawk_API available';
+                } else {
+                    document.getElementById('tawk-api').innerHTML = '⚠️ Tawk_API not fully initialized';
+                }
+            }, 3000);
+            
+        } catch (error) {
+            console.error('❌ Error initializing Tawk.to:', error);
+            document.getElementById('status').className = 'status error';
+            document.getElementById('status').innerHTML = '❌ Error initializing Tawk.to: ' + error.message;
+        }
+    })();
+    
+    // Network connectivity check
+    fetch('https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik')
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('network-check').innerHTML = '✅ Network connection to Tawk.to working';
+            } else {
+                document.getElementById('network-check').innerHTML = '⚠️ Network response: ' + response.status;
+            }
+        })
+        .catch(error => {
+            document.getElementById('network-check').innerHTML = '❌ Network error: ' + error.message;
+        });
+    
+    // Fallback check after 10 seconds
+    setTimeout(function() {
+        if (document.getElementById('status').className.includes('loading')) {
+            console.warn('⚠️ Tawk.to widget did not load within 10 seconds');
+            document.getElementById('status').className = 'status error';
+            document.getElementById('status').innerHTML = '⚠️ Tawk.to widget loading timeout (check console for details)';
+        }
+    }, 10000);
+    </script>
+    <!--End of Enhanced Tawk.to Script-->
+</body>
+</html>

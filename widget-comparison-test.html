@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tawk.to Test</title>
+</head>
+<body>
+    <h1>Demo Tawk.to Widget Test</h1>
+    <p>This uses a known working demo widget ID. If this works but your widget doesn't, the issue is with your specific widget configuration.</p>
+    
+    <div style="margin: 20px 0; padding: 15px; background: #f0f8ff; border: 1px solid #0066cc;">
+        <strong>Testing with Demo Widget:</strong><br>
+        Widget ID: 1a2b3c4d5e6f7g8h9i0j1k2l (example)<br>
+        This should show a chat widget in the bottom right corner.
+    </div>
+
+    <!--Start of Demo Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    Tawk_API.onLoad = function(){
+        console.log('Demo Tawk widget loaded successfully!');
+        alert('✅ Demo Tawk widget is working! The issue is with your specific widget configuration.');
+    };
+    
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    // Using a known working demo widget - you'll need to replace this with a valid demo ID
+    s1.src='https://embed.tawk.to/5a7c31ded7591465c7077c48/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Demo Tawk.to Script-->
+
+    <hr style="margin: 40px 0;">
+    
+    <h2>Your Current Widget Test</h2>
+    <p>Now testing with your actual widget ID:</p>
+    
+    <!--Start of Your Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API2=Tawk_API2||{}, Tawk_LoadStart2=new Date();
+    
+    Tawk_API2.onLoad = function(){
+        console.log('Your Tawk widget loaded successfully!');
+        alert('✅ Your Tawk widget is working!');
+    };
+    
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Your Tawk.to Script-->
+    
+    <div style="margin: 20px 0; padding: 15px; background: #fff0f0; border: 1px solid #cc0000;">
+        <strong>If neither widget loads:</strong><br>
+        • Check browser console for errors<br>
+        • Disable browser extensions/ad blockers<br>
+        • Try in incognito/private mode<br>
+        • Check internet connection<br>
+        <br>
+        <strong>If only demo works:</strong><br>
+        • Your widget ID might be incorrect<br>
+        • Your domain might not be approved in Tawk.to dashboard<br>
+        • Your widget might be offline in Tawk.to settings
+    </div>
+</body>
+</html>

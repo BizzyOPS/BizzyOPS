@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawk.to Widget Issue Diagnostic</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .status-box { margin: 15px 0; padding: 15px; border-radius: 5px; }
+        .loading { background: #e3f2fd; border-left: 4px solid #2196f3; }
+        .success { background: #e8f5e8; border-left: 4px solid #4caf50; }
+        .error { background: #ffebee; border-left: 4px solid #f44336; }
+        .warning { background: #fff3e0; border-left: 4px solid #ff9800; }
+        .code-block { background: #f5f5f5; padding: 10px; border-radius: 4px; font-family: monospace; margin: 10px 0; }
+        .step { margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 5px; }
+        button { padding: 10px 20px; background: #2196f3; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #1976d2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Tawk.to Widget Diagnostic Tool</h1>
+        
+        <div id="main-status" class="status-box loading">
+            <strong>🔄 Initializing diagnostic...</strong>
+        </div>
+
+        <div class="step">
+            <h2>📋 Widget Information</h2>
+            <div class="code-block">
+                Widget ID: 68e5a8ef0b10cd194e33e894<br>
+                Property ID: 1j70hnqik<br>
+                Embed URL: https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik
+            </div>
+            <button onclick="testEmbedUrl()">Test Embed URL</button>
+            <div id="url-test-result"></div>
+        </div>
+
+        <div class="step">
+            <h2>🌐 Network Connectivity</h2>
+            <div id="network-status" class="status-box loading">Testing network connection...</div>
+            <button onclick="testNetwork()">Retest Network</button>
+        </div>
+
+        <div class="step">
+            <h2>📜 Script Loading</h2>
+            <div id="script-status" class="status-box loading">Checking script loading...</div>
+        </div>
+
+        <div class="step">
+            <h2>🎯 Widget Detection</h2>
+            <div id="widget-status" class="status-box loading">Scanning for widget elements...</div>
+            <button onclick="scanForWidget()">Rescan Widget</button>
+        </div>
+
+        <div class="step">
+            <h2>🔧 Common Solutions</h2>
+            <div id="solutions">
+                <h3>Most Common Fixes:</h3>
+                <ol>
+                    <li><strong>Domain Whitelist:</strong> Add 'localhost' and '127.0.0.1' to your Tawk.to dashboard whitelist</li>
+                    <li><strong>Widget Status:</strong> Ensure widget is set to "Online" in Tawk.to admin</li>
+                    <li><strong>Browser Issues:</strong> Test in incognito mode, disable ad blockers</li>
+                    <li><strong>Account Status:</strong> Verify your Tawk.to account is active and verified</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>🛠 Manual Tests</h2>
+            <button onclick="forceLoadWidget()">Force Load Widget</button>
+            <button onclick="checkConsole()">Check Console Errors</button>
+            <button onclick="testAlternativeWidget()">Test Alternative Widget</button>
+        </div>
+
+        <div class="step">
+            <h2>📊 Results Summary</h2>
+            <div id="results-summary" class="status-box loading">
+                Running diagnostics...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let diagnosticResults = {
+            networkOk: false,
+            scriptLoaded: false,
+            widgetDetected: false,
+            consoleErrors: []
+        };
+
+        // Capture console errors
+        const originalConsoleError = console.error;
+        console.error = function(...args) {
+            diagnosticResults.consoleErrors.push(args.join(' '));
+            originalConsoleError.apply(console, arguments);
+        };
+
+        // Test network connectivity
+        function testNetwork() {
+            const statusDiv = document.getElementById('network-status');
+            statusDiv.className = 'status-box loading';
+            statusDiv.innerHTML = '🔄 Testing connection to Tawk.to servers...';
+            
+            fetch('https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik', { 
+                method: 'HEAD',
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                diagnosticResults.networkOk = true;
+                statusDiv.className = 'status-box success';
+                statusDiv.innerHTML = '✅ Network connection to Tawk.to is working';
+            })
+            .catch(error => {
+                diagnosticResults.networkOk = false;
+                statusDiv.className = 'status-box error';
+                statusDiv.innerHTML = `❌ Network error: ${error.message}`;
+            });
+        }
+
+        // Test embed URL directly
+        function testEmbedUrl() {
+            const resultDiv = document.getElementById('url-test-result');
+            const testUrl = 'https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
+            
+            resultDiv.innerHTML = `<div class="status-box loading">🔄 Testing ${testUrl}...</div>`;
+            
+            fetch(testUrl, { mode: 'no-cors' })
+            .then(() => {
+                resultDiv.innerHTML = '<div class="status-box success">✅ Embed URL is accessible</div>';
+            })
+            .catch(error => {
+                resultDiv.innerHTML = `<div class="status-box error">❌ Embed URL error: ${error.message}<br><small>This might indicate the widget ID is invalid or inactive</small></div>`;
+            });
+        }
+
+        // Scan for widget elements
+        function scanForWidget() {
+            const statusDiv = document.getElementById('widget-status');
+            const tawkElements = document.querySelectorAll('[id*="tawk"], [class*="tawk"], iframe[src*="tawk"]');
+            
+            if (tawkElements.length > 0) {
+                diagnosticResults.widgetDetected = true;
+                statusDiv.className = 'status-box success';
+                statusDiv.innerHTML = `✅ Found ${tawkElements.length} Tawk.to elements in DOM`;
+                
+                tawkElements.forEach((element, index) => {
+                    console.log(`Tawk element ${index + 1}:`, element);
+                });
+            } else {
+                diagnosticResults.widgetDetected = false;
+                statusDiv.className = 'status-box warning';
+                statusDiv.innerHTML = '⚠️ No Tawk.to widget elements found in DOM';
+            }
+        }
+
+        // Force load widget
+        function forceLoadWidget() {
+            console.log('🔄 Force loading Tawk.to widget...');
+            
+            // Remove existing scripts first
+            const existingScripts = document.querySelectorAll('script[src*="tawk.to"]');
+            existingScripts.forEach(script => script.remove());
+            
+            // Create fresh widget load
+            var Tawk_API_Force = Tawk_API_Force || {};
+            var Tawk_LoadStart_Force = new Date();
+            
+            (function(){
+                var s1 = document.createElement("script");
+                var s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                
+                s1.onload = function() {
+                    console.log('✅ Tawk.to script loaded via force method');
+                    document.getElementById('script-status').className = 'status-box success';
+                    document.getElementById('script-status').innerHTML = '✅ Script loaded successfully (forced)';
+                };
+                
+                s1.onerror = function() {
+                    console.error('❌ Failed to load Tawk.to script via force method');
+                    document.getElementById('script-status').className = 'status-box error';
+                    document.getElementById('script-status').innerHTML = '❌ Script failed to load (forced)';
+                };
+                
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        }
+
+        // Check console errors
+        function checkConsole() {
+            const errors = diagnosticResults.consoleErrors;
+            if (errors.length > 0) {
+                alert(`Console Errors Found:\n${errors.join('\n')}`);
+            } else {
+                alert('✅ No console errors detected');
+            }
+        }
+
+        // Test with alternative widget (demo)
+        function testAlternativeWidget() {
+            console.log('🔄 Loading demo widget for comparison...');
+            
+            var s1 = document.createElement("script");
+            var s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5a7c31ded7591465c7077c48/default'; // Demo widget
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            
+            s1.onload = function() {
+                alert('✅ Demo widget loaded! This confirms Tawk.to works - issue is with your specific widget configuration.');
+            };
+            
+            s1.onerror = function() {
+                alert('❌ Even demo widget failed - this indicates a broader connectivity or browser issue.');
+            };
+            
+            s0.parentNode.insertBefore(s1, s0);
+        }
+
+        // Update results summary
+        function updateSummary() {
+            const summaryDiv = document.getElementById('results-summary');
+            const issues = [];
+            
+            if (!diagnosticResults.networkOk) issues.push('Network connectivity issue');
+            if (!diagnosticResults.scriptLoaded) issues.push('Script loading failure');
+            if (!diagnosticResults.widgetDetected) issues.push('Widget not appearing in DOM');
+            if (diagnosticResults.consoleErrors.length > 0) issues.push(`${diagnosticResults.consoleErrors.length} console errors`);
+            
+            if (issues.length === 0) {
+                summaryDiv.className = 'status-box success';
+                summaryDiv.innerHTML = '✅ All tests passed - widget should be working';
+            } else {
+                summaryDiv.className = 'status-box error';
+                summaryDiv.innerHTML = `❌ Issues detected: ${issues.join(', ')}`;
+            }
+        }
+
+        // Initialize diagnostics
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Starting Tawk.to diagnostic...');
+            
+            // Auto-run initial tests
+            setTimeout(() => {
+                testNetwork();
+                scanForWidget();
+                updateSummary();
+            }, 1000);
+            
+            // Monitor for widget loading
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length > 0) {
+                        scanForWidget();
+                    }
+                });
+            });
+            
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    console.log('🚀 Loading Tawk.to widget...');
+    
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    Tawk_API.onLoad = function(){
+        console.log('✅ Tawk.to widget loaded successfully!');
+        document.getElementById('script-status').className = 'status-box success';
+        document.getElementById('script-status').innerHTML = '✅ Tawk.to script loaded and initialized successfully!';
+        document.getElementById('main-status').className = 'status-box success';
+        document.getElementById('main-status').innerHTML = '✅ Tawk.to widget is working! Check bottom-right corner.';
+        diagnosticResults.scriptLoaded = true;
+    };
+    
+    Tawk_API.onStatusChange = function(status){
+        console.log('📊 Tawk.to status changed to:', status);
+    };
+    
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    
+    s1.onload = function() {
+        console.log('✅ Tawk.to script file loaded from CDN');
+    };
+    
+    s1.onerror = function() {
+        console.error('❌ Failed to load Tawk.to script file');
+        document.getElementById('script-status').className = 'status-box error';
+        document.getElementById('script-status').innerHTML = '❌ Failed to load Tawk.to script from CDN';
+        document.getElementById('main-status').className = 'status-box error';
+        document.getElementById('main-status').innerHTML = '❌ Tawk.to script failed to load - check network or widget configuration';
+    };
+    
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
