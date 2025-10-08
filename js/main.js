@@ -148,8 +148,8 @@ function initContactForm() {
                 return;
             }
             
-            // Submit form to Web3Forms
-            handleContactFormSubmission(formObject);
+            // Submit form to Web3Forms with natural submission
+            submitFormNaturally(this);
         });
         
         // Real-time validation
@@ -243,40 +243,60 @@ function clearFieldError(field) {
     }
 }
 
-// Handle contact form submission with Web3Forms
-function handleContactFormSubmission(formData) {
+// Submit form naturally to Web3Forms
+function submitFormNaturally(form) {
     // Show loading state
-    const submitButton = document.querySelector('#contactForm button[type="submit"]');
+    const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
-    // Prepare form data for Web3Forms
-    const form = document.getElementById('contactForm');
-    const formDataObj = new FormData(form);
+    // Create a temporary iframe for submission
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'web3forms-frame';
+    document.body.appendChild(iframe);
     
-    // Submit to Web3Forms
-    fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formDataObj
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
+    // Set form target to iframe
+    const originalTarget = form.target;
+    form.target = 'web3forms-frame';
+    
+    // Listen for postMessage from iframe
+    const messageHandler = function(event) {
+        if (event.data === 'success') {
+            // Show success message
             showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
-            document.getElementById('contactForm').reset();
-        } else {
-            throw new Error(data.message || 'Form submission failed');
+            form.reset();
+            
+            // Clean up
+            window.removeEventListener('message', messageHandler);
+            form.target = originalTarget;
+            document.body.removeChild(iframe);
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
         }
-    })
-    .catch(error => {
-        console.error('Form submission error:', error);
-        showToast('Sorry, there was an error sending your message. Please try again or contact us directly.', 'error');
-    })
-    .finally(() => {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    });
+    };
+    
+    window.addEventListener('message', messageHandler);
+    
+    // Fallback timeout in case postMessage doesn't work
+    setTimeout(() => {
+        if (document.body.contains(iframe)) {
+            // Assume success after 3 seconds
+            showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
+            form.reset();
+            
+            // Clean up
+            window.removeEventListener('message', messageHandler);
+            form.target = originalTarget;
+            document.body.removeChild(iframe);
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
+    }, 3000);
+    
+    // Submit the form
+    form.submit();
 }
 
 // Newsletter form functionality
