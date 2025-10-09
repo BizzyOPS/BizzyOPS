@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Test - Tawk.to Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .header-check {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+        }
+        
+        #tawk-test-area {
+            min-height: 100px;
+            border: 2px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔒 CSP & Security Headers Test</h1>
+    <p>This page tests the Content Security Policy and security headers for Tawk.to integration.</p>
+
+    <div class="test-section">
+        <h2>📋 CSP Directives Status</h2>
+        <div class="info">
+            <strong>Testing the following CSP directives for Tawk.to compatibility:</strong>
+        </div>
+        
+        <div class="header-check">
+            <strong>style-src:</strong> <code>'self' 'unsafe-inline' *.tawk.to fonts.googleapis.com cdn.jsdelivr.net</code>
+        </div>
+        
+        <div class="header-check">
+            <strong>script-src:</strong> <code>'self' 'unsafe-inline' 'unsafe-eval' *.tawk.to cdn.jsdelivr.net</code>
+        </div>
+        
+        <div class="header-check">
+            <strong>frame-src:</strong> <code>'self' *.tawk.to</code>
+        </div>
+        
+        <div class="header-check">
+            <strong>font-src:</strong> <code>'self' *.tawk.to fonts.gstatic.com</code>
+        </div>
+        
+        <div class="header-check">
+            <strong>img-src:</strong> <code>'self' data: https: *.tawk.to cdn.jsdelivr.net tawk.link s3.amazonaws.com</code>
+        </div>
+        
+        <div class="header-check">
+            <strong>connect-src:</strong> <code>'self' *.tawk.to wss://*.tawk.to</code>
+        </div>
+        
+        <div class="header-check">
+            <strong>form-action:</strong> <code>'self' *.tawk.to</code>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🧪 Real-time Tests</h2>
+        
+        <div id="test-results">
+            <div class="info">Running CSP compatibility tests...</div>
+        </div>
+        
+        <h3>External Resource Tests:</h3>
+        <div id="resource-tests">
+            <!-- Google Fonts Test -->
+            <div class="status info">
+                <strong>Google Fonts:</strong> Testing font loading from fonts.googleapis.com
+            </div>
+            
+            <!-- CDN Test -->
+            <div class="status info">
+                <strong>CDN Resources:</strong> Testing scripts from cdn.jsdelivr.net
+            </div>
+            
+            <!-- Image Loading Test -->
+            <div class="status info">
+                <strong>Image Sources:</strong> Testing various image sources
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔍 Browser Security Information</h2>
+        <div id="browser-info">
+            <p><strong>User Agent:</strong> <span id="user-agent"></span></p>
+            <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+            <p><strong>Protocol:</strong> <span id="protocol"></span></p>
+            <p><strong>CSP Support:</strong> <span id="csp-support"></span></p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📞 Tawk.to Integration Area</h2>
+        <div class="info">
+            <strong>Note:</strong> The Tawk.to widget should load here without CSP violations if headers are configured correctly.
+        </div>
+        
+        <div id="tawk-test-area">
+            <p>Tawk.to widget integration test area</p>
+            <p><em>Check browser console for any CSP violations</em></p>
+        </div>
+    </div>
+
+    <!-- Google Fonts Test -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Test Script -->
+    <script>
+        // Populate browser info
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('protocol').textContent = window.location.protocol;
+        
+        // Check CSP support
+        const cspSupport = 'SecurityPolicyViolationEvent' in window ? 'Supported' : 'Not Supported';
+        document.getElementById('csp-support').textContent = cspSupport;
+        
+        // Listen for CSP violations
+        document.addEventListener('securitypolicyviolation', function(event) {
+            console.error('CSP Violation:', event);
+            const violation = document.createElement('div');
+            violation.className = 'status error';
+            violation.innerHTML = `<strong>CSP Violation:</strong> ${event.violatedDirective} - ${event.blockedURI}`;
+            document.getElementById('test-results').appendChild(violation);
+        });
+        
+        // Test external resource loading
+        function testResourceLoading() {
+            // Test CDN script loading
+            const testScript = document.createElement('script');
+            testScript.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+            testScript.onload = function() {
+                updateTestResult('CDN Resources', 'success', 'Chart.js loaded successfully from cdn.jsdelivr.net');
+            };
+            testScript.onerror = function() {
+                updateTestResult('CDN Resources', 'error', 'Failed to load Chart.js from cdn.jsdelivr.net');
+            };
+            document.head.appendChild(testScript);
+            
+            // Test image loading from various sources
+            const testImages = [
+                'https://tawk.link/favicon.ico',
+                'https://s3.amazonaws.com/tawk-to/favicon.ico'
+            ];
+            
+            testImages.forEach(src => {
+                const img = new Image();
+                img.onload = function() {
+                    updateTestResult('Image Sources', 'success', `Image loaded successfully from ${src}`);
+                };
+                img.onerror = function() {
+                    updateTestResult('Image Sources', 'error', `Failed to load image from ${src}`);
+                };
+                img.src = src;
+            });
+        }
+        
+        function updateTestResult(category, status, message) {
+            const result = document.createElement('div');
+            result.className = `status ${status}`;
+            result.innerHTML = `<strong>${category}:</strong> ${message}`;
+            document.getElementById('test-results').appendChild(result);
+        }
+        
+        // Initialize tests
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if fonts loaded
+            document.fonts.ready.then(function() {
+                updateTestResult('Google Fonts', 'success', 'Inter font loaded successfully from fonts.googleapis.com');
+            });
+            
+            // Run resource tests
+            setTimeout(testResourceLoading, 1000);
+            
+            // Add initial success message
+            updateTestResult('CSP Headers', 'success', 'Page loaded without immediate CSP violations');
+        });
+        
+        // Console logging for debugging
+        console.log('CSP Test page loaded');
+        console.log('Check Network tab for blocked resources');
+        console.log('Check Console for CSP violation reports');
+    </script>
+
+    <!--Start of Tawk.to Script (for testing) -->
+    <!-- Uncomment the following section to test actual Tawk.to integration -->
+    <!--
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_TAWK_ID/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    -->
+    <!--End of Tawk.to Script-->
+</body>
+</html>

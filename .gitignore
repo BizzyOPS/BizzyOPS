@@ -1,0 +1,35 @@
+# Sensitive Configuration Files
+client-portal/api/config.php
+
+# Composer Dependencies
+client-portal/vendor/
+client-portal/composer.lock
+
+# Log Files
+client-portal/logs/
+*.log
+
+# Environment Variables
+.env
+.env.local
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+
+# Upload Directories
+client-portal/uploads/
+client-portal/files/
