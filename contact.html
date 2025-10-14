@@ -114,13 +114,11 @@
                         <!-- Web3Forms Access Key -->
                         <input type="hidden" name="access_key" value="0d5bf112-4013-425e-898e-1fa635af087a">
                         
-                        <!-- Honeypot Spam Protection -->
-                        <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
-                        
-                        <!-- Success redirect handled by iframe -->
-                        <input type="hidden" name="redirect" value="data:text/html,<script>parent.postMessage('success','*')</script>">
-                        
-                        <div class="form-group">
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
+        
+        <!-- Success redirect handled by iframe -->
+        <input type="hidden" name="redirect" value="data:text/html,<script>parent.postMessage('success',window.location.origin)</script>">                        <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>

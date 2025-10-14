@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2025 
+ *   All rights reserved.
+ */
 // BizzyOPS Website JavaScript
 // Modern vanilla JavaScript for interactive functionality
 
@@ -263,6 +267,18 @@ function submitFormNaturally(form) {
     
     // Listen for postMessage from iframe
     const messageHandler = function(event) {
+        // Verify the origin to prevent XSS attacks
+        const allowedOrigins = [
+            window.location.origin,
+            'https://bizzyops.com',
+            'https://www.bizzyops.com'
+        ];
+        
+        if (!allowedOrigins.includes(event.origin)) {
+            console.warn('Rejected postMessage from untrusted origin:', event.origin);
+            return;
+        }
+        
         if (event.data === 'success') {
             // Show success message
             showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
