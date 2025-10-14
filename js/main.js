@@ -266,19 +266,8 @@ function submitFormNaturally(form) {
     form.target = 'web3forms-frame';
     
     // Listen for postMessage from iframe
+    const TRUSTED_ORIGIN = 'https://web3forms.com'; // Set this to the expected origin
     const messageHandler = function(event) {
-        // Verify the origin to prevent XSS attacks
-        const allowedOrigins = [
-            window.location.origin,
-            'https://bizzyops.com',
-            'https://www.bizzyops.com'
-        ];
-        
-        if (!allowedOrigins.includes(event.origin)) {
-            console.warn('Rejected postMessage from untrusted origin:', event.origin);
-            return;
-        }
-        
         if (event.data === 'success') {
             // Show success message
             showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
