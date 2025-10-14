@@ -262,8 +262,9 @@ function submitFormNaturally(form) {
     form.target = 'web3forms-frame';
     
     // Listen for postMessage from iframe
+    const TRUSTED_ORIGIN = 'https://web3forms.com'; // Set this to the expected origin
     const messageHandler = function(event) {
-        if (event.data === 'success') {
+        if (event.origin === TRUSTED_ORIGIN && event.data === 'success') {
             // Show success message
             showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
             form.reset();
