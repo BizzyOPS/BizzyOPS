@@ -111,14 +111,20 @@
                     <p>Tell us about your IT needs and we'll provide a customized solution for your business.</p>
                     
                     <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Web3Forms Access Key -->
-                        <input type="hidden" name="access_key" value="0d5bf112-4013-425e-898e-1fa635af087a">
+                        <!-- Web3Forms Access Key - Added dynamically via JavaScript for security -->
                         
+        <!-- Web3Forms Configuration -->
+        <input type="hidden" name="to" value="support@bizzyops.com">
+        <input type="hidden" name="subject" value="New Contact Form Submission - BizzyOPS">
+        <input type="hidden" name="from_name" value="BizzyOPS Contact Form">
+        
         <!-- Honeypot Spam Protection -->
         <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
         
         <!-- Success redirect handled by iframe -->
-        <input type="hidden" name="redirect" value="data:text/html,<script>parent.postMessage('success',window.location.origin)</script>">                        <div class="form-group">
+        <input type="hidden" name="redirect" value="data:text/html,<script>try{parent.postMessage('success',window.location.origin||'https://bizzyops.com');}catch(e){console.log('postMessage blocked')}</script>";
+                        
+                        <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
@@ -320,13 +326,46 @@
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    // Enhanced Tawk.to configuration for better visibility
+    Tawk_API.onLoad = function(){
+        // Force show the widget
+        Tawk_API.showWidget();
+        // Set custom position
+        Tawk_API.setAttributes({
+            'name': 'BizzyOPS Support',
+            'email': 'support@bizzyops.com'
+        });
+    };
+    
+    Tawk_API.customStyle = {
+        visibility: {
+            desktop: {
+                position: 'br',
+                xOffset: 20,
+                yOffset: 20
+            },
+            mobile: {
+                position: 'br',
+                xOffset: 10,
+                yOffset: 10
+            }
+        }
+    };
+
     (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/68e5a8ef0b10cd194e33e894/1j70hnqik';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        
+        // Error handling for script loading
+        s1.onerror = function() {
+            console.error('Failed to load Tawk.to script');
+        };
+        
+        s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
     <!--End of Tawk.to Script-->

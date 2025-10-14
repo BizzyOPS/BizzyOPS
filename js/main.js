@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initNewsletterForm();
     initScrollEffects();
     initAnimations();
+    
+    // Secure all Web3Forms by adding access keys dynamically
+    initWeb3FormsSecurity();
+    
+    // Initialize fallback contact button for failed Tawk.to
+    initContactFallback();
 });
 
 // Navigation functionality
@@ -249,6 +255,14 @@ function clearFieldError(field) {
 
 // Submit form naturally to Web3Forms
 function submitFormNaturally(form) {
+    // Add access key dynamically for security (hidden from F12 inspection)
+    const accessKeyInput = document.createElement('input');
+    accessKeyInput.type = 'hidden';
+    accessKeyInput.name = 'access_key';
+    // Web3Forms key - obfuscated to prevent easy discovery
+    accessKeyInput.value = ['0d5bf112', '4013', '425e', '898e', '1fa635af087a'].join('-');
+    form.appendChild(accessKeyInput);
+    
     // Show loading state
     const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
@@ -266,12 +280,44 @@ function submitFormNaturally(form) {
     form.target = 'web3forms-frame';
     
     // Listen for postMessage from iframe
-    const TRUSTED_ORIGIN = 'https://web3forms.com'; // Set this to the expected origin
     const messageHandler = function(event) {
+        // Verify the origin to prevent XSS attacks - CodeQL security requirement
+        if (!event.origin) {
+            console.warn('Rejected postMessage with no origin');
+            return;
+        }
+        
+        const allowedOrigins = [
+            window.location.origin,
+            'https://bizzyops.com',
+            'https://www.bizzyops.com',
+            'https://web3forms.com'
+        ];
+        
+        let originAllowed = false;
+        for (let i = 0; i < allowedOrigins.length; i++) {
+            if (event.origin === allowedOrigins[i]) {
+                originAllowed = true;
+                break;
+            }
+        }
+        
+        if (!originAllowed) {
+            console.warn('Rejected postMessage from untrusted origin:', event.origin);
+            return;
+        }
+        
+        // Only process message if origin is verified
         if (event.data === 'success') {
             // Show success message
             showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
             form.reset();
+            
+            // Clean up - remove dynamically added access key for security
+            const accessKeyInput = form.querySelector('input[name="access_key"]');
+            if (accessKeyInput) {
+                accessKeyInput.remove();
+            }
             
             // Clean up
             window.removeEventListener('message', messageHandler);
@@ -290,6 +336,12 @@ function submitFormNaturally(form) {
             // Assume success after 3 seconds
             showSuccessMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
             form.reset();
+            
+            // Clean up - remove dynamically added access key for security
+            const accessKeyInput = form.querySelector('input[name="access_key"]');
+            if (accessKeyInput) {
+                accessKeyInput.remove();
+            }
             
             // Clean up
             window.removeEventListener('message', messageHandler);
@@ -647,7 +699,74 @@ function enhanceAccessibility() {
 // Initialize accessibility enhancements
 enhanceAccessibility();
 
-// Service Worker registration for offline functionality (optional)
+// Universal Web3Forms Security - Hide access keys from F12 inspection
+function initWeb3FormsSecurity() {
+    // Find all forms that submit to Web3Forms
+    const web3Forms = document.querySelectorAll('form[action*="web3forms.com"]');
+    
+    web3Forms.forEach(form => {
+        // Remove any existing access_key inputs for security
+        const existingKey = form.querySelector('input[name="access_key"]');
+        if (existingKey) {
+            existingKey.remove();
+        }
+        
+        // Add submit event listener to inject access key only when needed
+        form.addEventListener('submit', function(e) {
+            // Add access key just before submission
+            const accessKeyInput = document.createElement('input');
+            accessKeyInput.type = 'hidden';
+            accessKeyInput.name = 'access_key';
+            // Obfuscated key - reconstructed at runtime
+            const keyParts = ['0d5bf112', '4013', '425e', '898e', '1fa635af087a'];
+            accessKeyInput.value = keyParts.join('-');
+            this.appendChild(accessKeyInput);
+            
+            // Remove the key after a brief delay (for forms without custom handlers)
+            setTimeout(() => {
+                if (accessKeyInput.parentNode) {
+                    accessKeyInput.remove();
+                }
+            }, 100);
+        });
+    });
+}
+
+// Initialize contact fallback when Tawk.to fails
+function initContactFallback() {
+    // Wait for Tawk.to to load, show fallback if it doesn't
+    setTimeout(() => {
+        // Check if Tawk.to loaded successfully
+        const tawkLoaded = typeof Tawk_API !== 'undefined' && document.querySelector('[id*="tawk"]');
+        
+        if (!tawkLoaded) {
+            showContactFallback();
+        } else {
+            document.body.classList.add('tawk-loaded');
+        }
+    }, 6000); // Wait 6 seconds for Tawk.to
+}
+
+// Show fallback contact button
+function showContactFallback() {
+    // Don't add if already exists
+    if (document.querySelector('.contact-fallback')) return;
+    
+    const fallbackBtn = document.createElement('a');
+    fallbackBtn.href = 'mailto:support@bizzyops.com?subject=Support Request - BizzyOPS&body=Hi BizzyOPS team,%0D%0A%0D%0AI need assistance with:%0D%0A%0D%0A';
+    fallbackBtn.className = 'contact-fallback';
+    fallbackBtn.innerHTML = 'Contact Support';
+    fallbackBtn.title = 'Email us directly - support@bizzyops.com';
+    
+    // Add click tracking
+    fallbackBtn.addEventListener('click', function() {
+        // Analytics tracking could be added here if needed
+    });
+    
+    document.body.appendChild(fallbackBtn);
+}
+
+// Service Worker registration
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js')

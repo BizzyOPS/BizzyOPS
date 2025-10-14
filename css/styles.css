@@ -3490,3 +3490,91 @@ textarea:focus {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Tawk.to Live Chat Widget Styles
+   Ensure the chat widget appears above all other elements
+   ========================================================================== */
+
+/* Tawk.to widget container - highest z-index to ensure visibility */
+#tawkchat-container,
+div[id*="tawk"],
+.tawk-chat-widget,
+iframe[src*="tawk.to"] {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+/* Ensure Tawk widget appears on desktop */
+@media (min-width: 768px) {
+    #tawkchat-container,
+    div[id*="tawk"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+}
+
+/* Mobile positioning for Tawk widget */
+@media (max-width: 767px) {
+    #tawkchat-container,
+    div[id*="tawk"] {
+        right: 10px !important;
+        bottom: 10px !important;
+    }
+}
+
+/* Force show Tawk widget if hidden */
+.tawk-min-container {
+    display: block !important;
+}
+
+/* Override any potential CSS that might hide the widget */
+[id*="tawk"] * {
+    visibility: visible !important;
+}
+
+/* Fallback Contact Button (shown when Tawk.to fails) */
+.contact-fallback {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999999;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.contact-fallback:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+
+.contact-fallback::before {
+    content: "💬";
+    font-size: 16px;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Hide fallback when Tawk is loaded */
+body.tawk-loaded .contact-fallback {
+    display: none;
+}

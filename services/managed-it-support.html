@@ -252,8 +252,13 @@
                 <p class="subtitle">Contact us today for a free consultation and discover how our managed IT support can transform your business operations.</p>
                 
                 <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Web3Forms Access Key -->
-                    <input type="hidden" name="access_key" value="0d5bf112-4013-425e-898e-1fa635af087a">
+                    <!-- Web3Forms Access Key - Added dynamically via JavaScript for security -->
+                    
+                    <!-- Web3Forms Configuration -->
+                    <input type="hidden" name="to" value="support@bizzyops.com">
+                    <input type="hidden" name="subject" value="Managed IT Support Inquiry - BizzyOPS">
+                    <input type="hidden" name="from_name" value="BizzyOPS Managed IT Form">
+                    
                     <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
                     <input type="hidden" name="redirect" value="false">
                     
