@@ -198,139 +198,196 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <!-- Modern Contact Section -->
+        <section class="service-contact-section">
             <div class="container">
-                <h2>Cybersecurity Assessment Pricing</h2>
-                <p class="subtitle">Transparent pricing for comprehensive security assessments tailored to your organization size</p>
-                
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Essential Assessment</h3>
-                        <div class="pricing-amount">£1,500</div>
-                        <div class="pricing-period">one-time</div>
-                        <p>Basic security assessment for small businesses</p>
-                        <ul class="pricing-features">
-                            <li>Network vulnerability scan</li>
-                            <li>Basic penetration testing</li>
-                            <li>Configuration review</li>
-                            <li>Risk assessment report</li>
-                            <li>Remediation recommendations</li>
-                            <li>Email support</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
+                <div class="contact-wrapper">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-header">
+                            <h2>Secure Your Business Today</h2>
+                            <p>Get a comprehensive cybersecurity assessment to identify vulnerabilities and strengthen your defenses. Our security experts are ready to help protect your organization.</p>
+                        </div>
+                        
+                        <div class="contact-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛡️</div>
+                                <div class="benefit-content">
+                                    <h4>Expert Assessment</h4>
+                                    <p>Comprehensive security evaluation by certified cybersecurity professionals</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-content">
+                                    <h4>Detailed Report</h4>
+                                    <p>Complete vulnerability report with actionable recommendations</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎯</div>
+                                <div class="benefit-content">
+                                    <h4>Custom Solutions</h4>
+                                    <p>Tailored security improvements based on your specific risks</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+44-020-8230-1647" class="contact-method emergency">
+                                <span class="method-icon">📞</span>
+                                <div class="method-content">
+                                    <strong>Emergency Security</strong>
+                                    <span>+44 020 8230 1647</span>
+                                </div>
+                            </a>
+                            <a href="mailto:support@bizzyops.com" class="contact-method email">
+                                <span class="method-icon">✉️</span>
+                                <div class="method-content">
+                                    <strong>Security Team</strong>
+                                    <span>support@bizzyops.com</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div class="pricing-card featured">
-                        <h3>Professional Assessment</h3>
-                        <div class="pricing-amount">£4,500</div>
-                        <div class="pricing-period">one-time</div>
-                        <p>Comprehensive assessment for growing businesses</p>
-                        <ul class="pricing-features">
-                            <li>Full vulnerability assessment</li>
-                            <li>Comprehensive penetration testing</li>
-                            <li>Web application testing</li>
-                            <li>Compliance gap analysis</li>
-                            <li>Detailed risk analysis</li>
-                            <li>Security policy review</li>
-                            <li>Executive presentation</li>
-                            <li>3-month follow-up</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <h3>Enterprise Assessment</h3>
-                        <div class="pricing-amount">£7,500</div>
-                        <div class="pricing-period">one-time</div>
-                        <p>Enterprise-grade assessment for large organizations</p>
-                        <ul class="pricing-features">
-                            <li>Everything in Professional</li>
-                            <li>Advanced persistent threat simulation</li>
-                            <li>Social engineering testing</li>
-                            <li>Multiple compliance frameworks</li>
-                            <li>Vendor security assessment</li>
-                            <li>Custom security metrics</li>
-                            <li>Ongoing security consultation</li>
-                            <li>Annual reassessment discount</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Contact Sales</a>
+                    <!-- Contact Form -->
+                    <div class="modern-service-form">
+                        <div class="form-header">
+                            <h3>Schedule Your Security Assessment</h3>
+                            <p>Tell us about your security concerns and we'll create a customized assessment plan for your organization.</p>
+                        </div>
+                        
+                        <form class="service-contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="to" value="support@bizzyops.com">
+                            <input type="hidden" name="subject" value="Cybersecurity Assessment Request - BizzyOPS">
+                            <input type="hidden" name="from_name" value="BizzyOPS Cybersecurity Assessment Form">
+                            
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
+                            
+                            <!-- Success redirect -->
+                            <input type="hidden" name="redirect" value="false">
+                            
+                            <!-- Form Fields -->
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="name" class="field-label">
+                                        <span class="label-icon">👤</span>
+                                        <span class="label-text">Full Name</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" class="form-input" required 
+                                           placeholder="Enter your full name">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="email" class="field-label">
+                                        <span class="label-icon">📧</span>
+                                        <span class="label-text">Email Address</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input" required 
+                                           placeholder="your.email@company.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="phone" class="field-label">
+                                        <span class="label-icon">📞</span>
+                                        <span class="label-text">Phone Number</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" 
+                                           placeholder="+44 20 1234 5678">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="company" class="field-label">
+                                        <span class="label-icon">🏢</span>
+                                        <span class="label-text">Company Name</span>
+                                    </label>
+                                    <input type="text" id="company" name="company" class="form-input" 
+                                           placeholder="Your Company Ltd">
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="company-size" class="field-label">
+                                    <span class="label-icon">👥</span>
+                                    <span class="label-text">Company Size</span>
+                                </label>
+                                <select id="company-size" name="company-size" class="form-select">
+                                    <option value="">Select your company size</option>
+                                    <option value="1-25">🏪 Small Business (1-25 employees)</option>
+                                    <option value="26-100">🏬 Medium Business (26-100 employees)</option>
+                                    <option value="101-500">🏭 Large Business (101-500 employees)</option>
+                                    <option value="500+">🏛️ Enterprise (500+ employees)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">
+                                    <span class="label-icon">🔍</span>
+                                    <span class="label-text">Assessment Types Needed</span>
+                                </label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="vulnerability" name="services[]" value="Vulnerability Assessment">
+                                        <label for="vulnerability">
+                                            <span class="checkbox-icon">🔍</span>
+                                            <span class="checkbox-text">Vulnerability Assessment</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="penetration" name="services[]" value="Penetration Testing">
+                                        <label for="penetration">
+                                            <span class="checkbox-icon">🎯</span>
+                                            <span class="checkbox-text">Penetration Testing</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="compliance" name="services[]" value="Compliance Assessment">
+                                        <label for="compliance">
+                                            <span class="checkbox-icon">📋</span>
+                                            <span class="checkbox-text">Compliance Assessment</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="policy-review" name="services[]" value="Security Policy Review">
+                                        <label for="policy-review">
+                                            <span class="checkbox-icon">📄</span>
+                                            <span class="checkbox-text">Security Policy Review</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="message" class="field-label">
+                                    <span class="label-icon">🚨</span>
+                                    <span class="label-text">Current Security Concerns</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea" rows="4" 
+                                          placeholder="Describe any specific security concerns, compliance requirements, or recent incidents that worry you. This helps us prioritize your assessment."></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn service-submit">
+                                    <span class="btn-icon">🛡️</span>
+                                    <span class="btn-text">Schedule Security Assessment</span>
+                                </button>
+                                <p class="form-note">
+                                    <span class="note-icon">✅</span>
+                                    Confidential consultation • Expert analysis • Response within 2 hours
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact-form-section">
-            <div class="container">
-                <h2>Schedule Your Security Assessment</h2>
-                <p class="subtitle">Get started with a professional cybersecurity assessment to identify and address potential security risks in your organization.</p>
-                
-                <form class="contact-form" action="../contact.html" method="GET">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company-size">Company Size</label>
-                        <select id="company-size" name="company-size">
-                            <option value="">Select company size</option>
-                            <option value="1-25">1-25 employees</option>
-                            <option value="26-100">26-100 employees</option>
-                            <option value="101-500">101-500 employees</option>
-                            <option value="500+">500+ employees</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="assessment-type">Assessment Type Needed</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="vulnerability" name="services[]" value="vulnerability" aria-label="Vulnerability Assessment">
-                                <label for="vulnerability">Vulnerability Assessment</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="penetration" name="services[]" value="penetration" aria-label="Penetration Testing">
-                                <label for="penetration">Penetration Testing</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="compliance" name="services[]" value="compliance" aria-label="Compliance Assessment">
-                                <label for="compliance">Compliance Assessment</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="policy-review" name="services[]" value="policy-review" aria-label="Security Policy Review">
-                                <label for="policy-review">Security Policy Review</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Current Security Concerns</label>
-                        <textarea id="message" name="message" placeholder="Describe any specific security concerns or compliance requirements..."></textarea>
-                    </div>
-                    
-                    <div class="form-submit">
-                        <button type="submit">Schedule Assessment</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        </section>
     </section>
         </div>
     </section>

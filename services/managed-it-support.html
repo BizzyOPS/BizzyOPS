@@ -185,149 +185,196 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <!-- Modern Contact Section -->
+        <section class="service-contact-section">
             <div class="container">
-                <h2>Flexible Pricing Plans</h2>
-                <p class="subtitle">Choose the managed IT support plan that fits your business needs and budget</p>
-                
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Essential</h3>
-                        <div class="pricing-amount">£299</div>
-                        <div class="pricing-period">per month</div>
-                        <p>Perfect for small businesses (1-10 users)</p>
-                        <ul class="pricing-features">
-                            <li>Business hours support (9-5)</li>
-                            <li>Basic system monitoring</li>
-                            <li>Email & phone support</li>
-                            <li>Monthly maintenance</li>
-                            <li>Basic security monitoring</li>
-                            <li>Backup monitoring</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
+                <div class="contact-wrapper">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-header">
+                            <h2>Ready to Transform Your IT?</h2>
+                            <p>Get started with our managed IT support services today. Our experts are ready to help you build a more efficient, secure, and reliable IT infrastructure.</p>
+                        </div>
+                        
+                        <div class="contact-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚀</div>
+                                <div class="benefit-content">
+                                    <h4>Free Consultation</h4>
+                                    <p>Comprehensive IT assessment and tailored recommendations at no cost</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-content">
+                                    <h4>Quick Response</h4>
+                                    <p>Get your proposal within 24 hours of initial consultation</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛡️</div>
+                                <div class="benefit-content">
+                                    <h4>Proven Results</h4>
+                                    <p>99.9% uptime guarantee with 24/7 monitoring and support</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+44-020-8230-1647" class="contact-method emergency">
+                                <span class="method-icon">📞</span>
+                                <div class="method-content">
+                                    <strong>Call Now</strong>
+                                    <span>+44 020 8230 1647</span>
+                                </div>
+                            </a>
+                            <a href="mailto:support@bizzyops.com" class="contact-method email">
+                                <span class="method-icon">✉️</span>
+                                <div class="method-content">
+                                    <strong>Email Us</strong>
+                                    <span>support@bizzyops.com</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div class="pricing-card featured">
-                        <h3>Professional</h3>
-                        <div class="pricing-amount">£599</div>
-                        <div class="pricing-period">per month</div>
-                        <p>Ideal for growing businesses (11-50 users)</p>
-                        <ul class="pricing-features">
-                            <li>24/7 support and monitoring</li>
-                            <li>Proactive maintenance</li>
-                            <li>Priority support queue</li>
-                            <li>Advanced security management</li>
-                            <li>Automated backup & recovery</li>
-                            <li>Monthly reporting</li>
-                            <li>Remote assistance</li>
-                            <li>Asset management</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <div class="pricing-amount">£1,299</div>
-                        <div class="pricing-period">per month</div>
-                        <p>Comprehensive solution for large organizations (50+ users)</p>
-                        <ul class="pricing-features">
-                            <li>Everything in Professional</li>
-                            <li>Dedicated account manager</li>
-                            <li>Custom SLA agreements</li>
-                            <li>Advanced analytics</li>
-                            <li>Compliance management</li>
-                            <li>Strategic IT planning</li>
-                            <li>Priority on-site support</li>
-                            <li>Custom integrations</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Contact Sales</a>
+                    <!-- Contact Form -->
+                    <div class="modern-service-form">
+                        <div class="form-header">
+                            <h3>Get Your Free IT Consultation</h3>
+                            <p>Tell us about your business needs and we'll create a customized managed IT support plan for you.</p>
+                        </div>
+                        
+                        <form class="service-contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="to" value="support@bizzyops.com">
+                            <input type="hidden" name="subject" value="Managed IT Support Inquiry - BizzyOPS">
+                            <input type="hidden" name="from_name" value="BizzyOPS Managed IT Form">
+                            
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
+                            
+                            <!-- Success redirect -->
+                            <input type="hidden" name="redirect" value="false">
+                            
+                            <!-- Form Fields -->
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="name" class="field-label">
+                                        <span class="label-icon">👤</span>
+                                        <span class="label-text">Full Name</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" class="form-input" required 
+                                           placeholder="Enter your full name">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="email" class="field-label">
+                                        <span class="label-icon">📧</span>
+                                        <span class="label-text">Email Address</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input" required 
+                                           placeholder="your.email@company.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="phone" class="field-label">
+                                        <span class="label-icon">📞</span>
+                                        <span class="label-text">Phone Number</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" 
+                                           placeholder="+44 20 1234 5678">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="company" class="field-label">
+                                        <span class="label-icon">🏢</span>
+                                        <span class="label-text">Company Name</span>
+                                    </label>
+                                    <input type="text" id="company" name="company" class="form-input" 
+                                           placeholder="Your Company Ltd">
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="users" class="field-label">
+                                    <span class="label-icon">👥</span>
+                                    <span class="label-text">Number of Users</span>
+                                </label>
+                                <select id="users" name="users" class="form-select">
+                                    <option value="">Select your company size</option>
+                                    <option value="1-10">🏢 Small Business (1-10 users)</option>
+                                    <option value="11-50">🏬 Growing Business (11-50 users)</option>
+                                    <option value="51-100">🏭 Medium Business (51-100 users)</option>
+                                    <option value="100+">🏛️ Enterprise (100+ users)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">
+                                    <span class="label-icon">🛠️</span>
+                                    <span class="label-text">Services You're Interested In</span>
+                                </label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="monitoring" name="services[]" value="24/7 Monitoring">
+                                        <label for="monitoring">
+                                            <span class="checkbox-icon">🕒</span>
+                                            <span class="checkbox-text">24/7 System Monitoring</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="helpdesk" name="services[]" value="Help Desk Support">
+                                        <label for="helpdesk">
+                                            <span class="checkbox-icon">🎧</span>
+                                            <span class="checkbox-text">Help Desk Support</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="maintenance" name="services[]" value="Proactive Maintenance">
+                                        <label for="maintenance">
+                                            <span class="checkbox-icon">🔧</span>
+                                            <span class="checkbox-text">Proactive Maintenance</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="security" name="services[]" value="Security Management">
+                                        <label for="security">
+                                            <span class="checkbox-icon">🛡️</span>
+                                            <span class="checkbox-text">Security Management</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="message" class="field-label">
+                                    <span class="label-icon">💬</span>
+                                    <span class="label-text">Tell Us About Your IT Needs</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea" rows="4" 
+                                          placeholder="Describe your current IT setup, challenges you're facing, or specific requirements you have. This helps us provide more accurate recommendations."></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn service-submit">
+                                    <span class="btn-icon">🚀</span>
+                                    <span class="btn-text">Get My Free Consultation</span>
+                                </button>
+                                <p class="form-note">
+                                    <span class="note-icon">✅</span>
+                                    No obligation • Free consultation • Response within 2 hours
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact-form-section">
-            <div class="container">
-                <h2>Ready to Get Started?</h2>
-                <p class="subtitle">Contact us today for a free consultation and discover how our managed IT support can transform your business operations.</p>
-                
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Web3Forms Access Key - Added dynamically via JavaScript for security -->
-                    
-                    <!-- Web3Forms Configuration -->
-                    <input type="hidden" name="to" value="support@bizzyops.com">
-                    <input type="hidden" name="subject" value="Managed IT Support Inquiry - BizzyOPS">
-                    <input type="hidden" name="from_name" value="BizzyOPS Managed IT Form">
-                    
-                    <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
-                    <input type="hidden" name="redirect" value="false">
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="users">Number of Users</label>
-                        <select id="users" name="users">
-                            <option value="">Select range</option>
-                            <option value="1-10">1-10 users</option>
-                            <option value="11-50">11-50 users</option>
-                            <option value="51-100">51-100 users</option>
-                            <option value="100+">100+ users</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="services">Services Interested In</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="monitoring" name="services[]" value="monitoring" aria-label="24/7 Monitoring">
-                                <label for="monitoring">24/7 Monitoring</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="helpdesk" name="services[]" value="helpdesk" aria-label="Help Desk Support">
-                                <label for="helpdesk">Help Desk Support</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="maintenance" name="services[]" value="maintenance" aria-label="Proactive Maintenance">
-                                <label for="maintenance">Proactive Maintenance</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="security" name="services[]" value="security" aria-label="Security Management">
-                                <label for="security">Security Management</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Additional Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your current IT setup and specific requirements..."></textarea>
-                    </div>
-                    
-                    <div class="form-submit">
-                        <button type="submit">Schedule Free Consultation</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        </section>
     </section>
 
     <footer class="footer">

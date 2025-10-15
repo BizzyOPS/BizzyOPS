@@ -198,147 +198,196 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <!-- Modern Contact Section -->
+        <section class="service-contact-section">
             <div class="container">
-                <h2>Help Desk Support Pricing</h2>
-                <p class="subtitle">Flexible per-user pricing plans to match your team size and support requirements</p>
-                
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Essential</h3>
-                        <div class="pricing-amount">£25</div>
-                        <div class="pricing-period">per user/month</div>
-                        <p>Basic help desk support for small teams</p>
-                        <ul class="pricing-features">
-                            <li>Business hours support (9AM-6PM)</li>
-                            <li>Email and phone support</li>
-                            <li>Basic troubleshooting</li>
-                            <li>Password reset assistance</li>
-                            <li>Software guidance</li>
-                            <li>2-hour response time</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
+                <div class="contact-wrapper">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-header">
+                            <h2>Supercharge Your Team's Productivity</h2>
+                            <p>Experience professional help desk support that keeps your team focused on what matters most. Our expert technicians handle all IT issues, big and small.</p>
+                        </div>
+                        
+                        <div class="contact-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🎧</div>
+                                <div class="benefit-content">
+                                    <h4>Expert Help Desk</h4>
+                                    <p>Dedicated IT professionals available when your team needs support</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-content">
+                                    <h4>Fast Resolution</h4>
+                                    <p>Average ticket resolution time under 4 hours during business hours</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📚</div>
+                                <div class="benefit-content">
+                                    <h4>User Training</h4>
+                                    <p>Comprehensive training and documentation to empower your team</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+44-020-8230-1647" class="contact-method emergency">
+                                <span class="method-icon">📞</span>
+                                <div class="method-content">
+                                    <strong>Help Desk Hotline</strong>
+                                    <span>+44 020 8230 1647</span>
+                                </div>
+                            </a>
+                            <a href="mailto:support@bizzyops.com" class="contact-method email">
+                                <span class="method-icon">🎧</span>
+                                <div class="method-content">
+                                    <strong>Support Team</strong>
+                                    <span>support@bizzyops.com</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div class="pricing-card featured">
-                        <h3>Professional</h3>
-                        <div class="pricing-amount">£45</div>
-                        <div class="pricing-period">per user/month</div>
-                        <p>Comprehensive support for growing businesses</p>
-                        <ul class="pricing-features">
-                            <li>24/7 support availability</li>
-                            <li>Multi-channel support</li>
-                            <li>Remote desktop assistance</li>
-                            <li>Priority queue access</li>
-                            <li>Advanced troubleshooting</li>
-                            <li>15-minute response time</li>
-                            <li>User training included</li>
-                            <li>Account management</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <div class="pricing-amount">£75</div>
-                        <div class="pricing-period">per user/month</div>
-                        <p>Premium support for large organizations</p>
-                        <ul class="pricing-features">
-                            <li>Everything in Professional</li>
-                            <li>Dedicated account manager</li>
-                            <li>5-minute response time</li>
-                            <li>Custom SLA agreements</li>
-                            <li>On-site support included</li>
-                            <li>Advanced security support</li>
-                            <li>Custom training programs</li>
-                            <li>Proactive user monitoring</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Contact Sales</a>
+                    <!-- Contact Form -->
+                    <div class="modern-service-form">
+                        <div class="form-header">
+                            <h3>Start Your Free Help Desk Trial</h3>
+                            <p>Experience the difference professional IT support makes. Tell us about your team's needs and we'll set up your custom help desk solution.</p>
+                        </div>
+                        
+                        <form class="service-contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="to" value="support@bizzyops.com">
+                            <input type="hidden" name="subject" value="Help Desk Support Inquiry - BizzyOPS">
+                            <input type="hidden" name="from_name" value="BizzyOPS Help Desk Form">
+                            
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
+                            
+                            <!-- Success redirect -->
+                            <input type="hidden" name="redirect" value="false">
+                            
+                            <!-- Form Fields -->
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="name" class="field-label">
+                                        <span class="label-icon">👤</span>
+                                        <span class="label-text">Full Name</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" class="form-input" required 
+                                           placeholder="Enter your full name">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="email" class="field-label">
+                                        <span class="label-icon">📧</span>
+                                        <span class="label-text">Email Address</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input" required 
+                                           placeholder="your.email@company.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="phone" class="field-label">
+                                        <span class="label-icon">📞</span>
+                                        <span class="label-text">Phone Number</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" 
+                                           placeholder="+44 20 1234 5678">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="company" class="field-label">
+                                        <span class="label-icon">🏢</span>
+                                        <span class="label-text">Company Name</span>
+                                    </label>
+                                    <input type="text" id="company" name="company" class="form-input" 
+                                           placeholder="Your Company Ltd">
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="users" class="field-label">
+                                    <span class="label-icon">👥</span>
+                                    <span class="label-text">Team Size</span>
+                                </label>
+                                <select id="users" name="users" class="form-select">
+                                    <option value="">Select your team size</option>
+                                    <option value="1-10">👨‍💼 Small Team (1-10 users)</option>
+                                    <option value="11-25">👥 Medium Team (11-25 users)</option>
+                                    <option value="26-50">🏢 Large Team (26-50 users)</option>
+                                    <option value="50+">🏛️ Enterprise (50+ users)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">
+                                    <span class="label-icon">🛠️</span>
+                                    <span class="label-text">Support Requirements</span>
+                                </label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="troubleshooting" name="services[]" value="Technical Troubleshooting">
+                                        <label for="troubleshooting">
+                                            <span class="checkbox-icon">🔧</span>
+                                            <span class="checkbox-text">Technical Troubleshooting</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="user-management" name="services[]" value="User Account Management">
+                                        <label for="user-management">
+                                            <span class="checkbox-icon">👤</span>
+                                            <span class="checkbox-text">User Account Management</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="training" name="services[]" value="Training & Guidance">
+                                        <label for="training">
+                                            <span class="checkbox-icon">📚</span>
+                                            <span class="checkbox-text">Training & Guidance</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="emergency" name="services[]" value="24/7 Emergency Support">
+                                        <label for="emergency">
+                                            <span class="checkbox-icon">🚨</span>
+                                            <span class="checkbox-text">24/7 Emergency Support</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="message" class="field-label">
+                                    <span class="label-icon">💬</span>
+                                    <span class="label-text">Current Support Challenges</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea" rows="4" 
+                                          placeholder="Tell us about your current IT support challenges, common issues your team faces, or specific requirements you have for help desk services."></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn service-submit">
+                                    <span class="btn-icon">🎧</span>
+                                    <span class="btn-text">Start Free Help Desk Trial</span>
+                                </button>
+                                <p class="form-note">
+                                    <span class="note-icon">✅</span>
+                                    Free trial • No setup fees • Response within 2 hours
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact-form-section">
-            <div class="container">
-                <h2>Ready for Better IT Support?</h2>
-                <p class="subtitle">Start your free trial today and experience the difference professional help desk support makes for your team's productivity.</p>
-                
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Web3Forms Access Key - Added dynamically via JavaScript for security -->
-                    
-                    <!-- Web3Forms Configuration -->
-                    <input type="hidden" name="to" value="support@bizzyops.com">
-                    <input type="hidden" name="subject" value="Help Desk Support Inquiry - BizzyOPS">
-                    <input type="hidden" name="from_name" value="BizzyOPS Help Desk Form">
-                    
-                    <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
-                    <input type="hidden" name="redirect" value="false">
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="users">Number of Users</label>
-                        <select id="users" name="users">
-                            <option value="">Select team size</option>
-                            <option value="1-10">1-10 users</option>
-                            <option value="11-25">11-25 users</option>
-                            <option value="26-50">26-50 users</option>
-                            <option value="50+">50+ users</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="support-needs">Support Requirements</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="troubleshooting" name="services[]" value="troubleshooting" aria-label="Technical Troubleshooting">
-                                <label for="troubleshooting">Technical Troubleshooting</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="user-management" name="services[]" value="user-management" aria-label="User Account Management">
-                                <label for="user-management">User Account Management</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="training" name="services[]" value="training" aria-label="Training & Guidance">
-                                <label for="training">Training & Guidance</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="emergency" name="services[]" value="emergency" aria-label="24/7 Emergency Support">
-                                <label for="emergency">24/7 Emergency Support</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Current Support Challenges</label>
-                        <textarea id="message" name="message" placeholder="Describe your current IT support challenges and requirements..."></textarea>
-                    </div>
-                    
-                    <div class="form-submit">
-                        <button type="submit">Start Free Trial</button>
-                    </div>
-                </form>
+        </section>
             </div>
         </div>
     </section>

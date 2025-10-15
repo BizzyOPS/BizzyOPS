@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Secure all Web3Forms by adding access keys dynamically
     initWeb3FormsSecurity();
-    
-    // Initialize fallback contact button for failed Tawk.to
-    initContactFallback();
 });
 
 // Navigation functionality
@@ -255,6 +252,10 @@ function clearFieldError(field) {
 
 // Submit form naturally to Web3Forms
 function submitFormNaturally(form) {
+    // Remove any existing access keys first
+    const existingKeys = form.querySelectorAll('input[name="access_key"], .web3forms-key');
+    existingKeys.forEach(key => key.remove());
+    
     // Add access key dynamically for security (hidden from F12 inspection)
     const accessKeyInput = document.createElement('input');
     accessKeyInput.type = 'hidden';
@@ -706,64 +707,32 @@ function initWeb3FormsSecurity() {
     
     web3Forms.forEach(form => {
         // Remove any existing access_key inputs for security
-        const existingKey = form.querySelector('input[name="access_key"]');
-        if (existingKey) {
-            existingKey.remove();
-        }
+        const existingKeys = form.querySelectorAll('input[name="access_key"], .web3forms-key');
+        existingKeys.forEach(key => key.remove());
         
-        // Add submit event listener to inject access key only when needed
-        form.addEventListener('submit', function(e) {
-            // Add access key just before submission
-            const accessKeyInput = document.createElement('input');
-            accessKeyInput.type = 'hidden';
-            accessKeyInput.name = 'access_key';
-            // Obfuscated key - reconstructed at runtime
-            const keyParts = ['0d5bf112', '4013', '425e', '898e', '1fa635af087a'];
-            accessKeyInput.value = keyParts.join('-');
-            this.appendChild(accessKeyInput);
-            
-            // Remove the key after a brief delay (for forms without custom handlers)
-            setTimeout(() => {
-                if (accessKeyInput.parentNode) {
-                    accessKeyInput.remove();
-                }
-            }, 100);
-        });
-    });
-}
-
-// Initialize contact fallback when Tawk.to fails
-function initContactFallback() {
-    // Wait for Tawk.to to load, show fallback if it doesn't
-    setTimeout(() => {
-        // Check if Tawk.to loaded successfully
-        const tawkLoaded = typeof Tawk_API !== 'undefined' && document.querySelector('[id*="tawk"]');
-        
-        if (!tawkLoaded) {
-            showContactFallback();
-        } else {
-            document.body.classList.add('tawk-loaded');
+        // Only add automatic key injection for forms without custom handlers
+        // The contact form has its own handler via initContactForm()
+        if (form.id !== 'contactForm') {
+            // Add submit event listener to inject access key only when needed
+            form.addEventListener('submit', function(e) {
+                // Add access key just before submission
+                const accessKeyInput = document.createElement('input');
+                accessKeyInput.type = 'hidden';
+                accessKeyInput.name = 'access_key';
+                // Obfuscated key - reconstructed at runtime
+                const keyParts = ['0d5bf112', '4013', '425e', '898e', '1fa635af087a'];
+                accessKeyInput.value = keyParts.join('-');
+                this.appendChild(accessKeyInput);
+                
+                // Remove the key after a brief delay (for forms without custom handlers)
+                setTimeout(() => {
+                    if (accessKeyInput.parentNode) {
+                        accessKeyInput.remove();
+                    }
+                }, 100);
+            });
         }
-    }, 6000); // Wait 6 seconds for Tawk.to
-}
-
-// Show fallback contact button
-function showContactFallback() {
-    // Don't add if already exists
-    if (document.querySelector('.contact-fallback')) return;
-    
-    const fallbackBtn = document.createElement('a');
-    fallbackBtn.href = 'mailto:support@bizzyops.com?subject=Support Request - BizzyOPS&body=Hi BizzyOPS team,%0D%0A%0D%0AI need assistance with:%0D%0A%0D%0A';
-    fallbackBtn.className = 'contact-fallback';
-    fallbackBtn.innerHTML = 'Contact Support';
-    fallbackBtn.title = 'Email us directly - support@bizzyops.com';
-    
-    // Add click tracking
-    fallbackBtn.addEventListener('click', function() {
-        // Analytics tracking could be added here if needed
     });
-    
-    document.body.appendChild(fallbackBtn);
 }
 
 // Service Worker registration
@@ -771,18 +740,10 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js')
             .then(function(registration) {
-                console.log('SW registered: ', registration);
+                // Service worker registered successfully
             })
             .catch(function(registrationError) {
-                console.log('SW registration failed: ', registrationError);
+                // Service worker registration failed
             });
     });
 }
-
-// Export functions for testing or external use
-window.BizzyOPS = {
-    showToast,
-    showSuccessMessage,
-    isValidEmail,
-    validateField
-};

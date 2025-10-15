@@ -1434,7 +1434,7 @@ ul {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: white;
 }
 
 /* Service page forms - dark theme (for pages with dark backgrounds) */
@@ -1443,9 +1443,9 @@ ul {
 .contact-form-section .form-group select {
     width: 100%;
     padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -1470,7 +1470,7 @@ ul {
 /* Service page form placeholders and focus - dark theme */
 .contact-form-section .form-group input::placeholder,
 .contact-form-section .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .contact-form-section .form-group input:focus,
@@ -1511,20 +1511,30 @@ ul {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: all 0.3s ease;
+    color: white;
+    font-weight: 500;
 }
 
 .checkbox-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .checkbox-item input[type="checkbox"] {
     width: auto;
+    margin: 0;
+}
+
+.checkbox-item label {
+    color: white !important;
+    font-weight: 500;
+    cursor: pointer;
     margin: 0;
 }
 
@@ -1635,6 +1645,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    max-width: 100%;
 }
 
 .contact-form-container {
@@ -1642,6 +1653,8 @@ ul {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-form-container h2 {
@@ -2401,12 +2414,34 @@ ul {
     }
 
     .contact-section {
-        padding: 3rem 0;
+        padding: 3rem 1rem;
     }
 
     .contact-form-container,
     .quick-contact {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    /* Improved mobile form styling */
+    .contact-form-container .form-group input,
+    .contact-form-container .form-group select,
+    .contact-form-container .form-group textarea,
+    .contact-form-section .form-group input,
+    .contact-form-section .form-group textarea,
+    .contact-form-section .form-group select {
+        padding: 1rem 0.75rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .checkbox-item {
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .contact-info {
@@ -2487,10 +2522,11 @@ ul {
     .service-card,
     .contact-form-container {
         padding: 1.5rem 1rem;
+        margin: 0 0.25rem;
     }
 
     .contact-section {
-        padding: 2rem 0;
+        padding: 2rem 0.5rem;
     }
 
     .contact-form-container h2 {
@@ -2505,6 +2541,28 @@ ul {
 
     .form-group {
         margin-bottom: 1.25rem;
+    }
+    
+    /* Small mobile optimizations */
+    .contact-form-container .form-group input,
+    .contact-form-container .form-group select,
+    .contact-form-container .form-group textarea,
+    .contact-form-section .form-group input,
+    .contact-form-section .form-group textarea,
+    .contact-form-section .form-group select {
+        padding: 0.875rem 0.75rem;
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+    
+    .contact-form-section {
+        padding: 2rem 1rem;
+        margin: 1rem 0.5rem;
+    }
+    
+    .form-submit button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
     }
 
     .form-group input,
@@ -3491,6 +3549,60 @@ textarea:focus {
     }
 }
 
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .contact-section {
+        padding: 1.5rem 0.25rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.25rem 0.75rem;
+        margin: 0;
+        border-radius: 0.5rem;
+    }
+    
+    .contact-form-section {
+        padding: 1.5rem 0.75rem;
+        margin: 1rem 0.25rem;
+        border-radius: 1rem;
+    }
+    
+    .contact-form-container h2,
+    .contact-form-section h2 {
+        font-size: 1.25rem;
+        line-height: 1.3;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .contact-form-container .form-group input,
+    .contact-form-container .form-group select,
+    .contact-form-container .form-group textarea,
+    .contact-form-section .form-group input,
+    .contact-form-section .form-group textarea,
+    .contact-form-section .form-group select {
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+    }
+    
+    .checkbox-item {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .form-submit button {
+        padding: 0.875rem 1rem;
+        border-radius: 0.5rem;
+    }
+}
+
 /* ==========================================================================
    Tawk.to Live Chat Widget Styles
    Ensure the chat widget appears above all other elements
@@ -3536,45 +3648,774 @@ iframe[src*="tawk.to"] {
     visibility: visible !important;
 }
 
-/* Fallback Contact Button (shown when Tawk.to fails) */
-.contact-fallback {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999999;
-    background: linear-gradient(135deg, #007bff, #0056b3);
+/* Modern Contact Page Styles */
+.contact-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.main-contact-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.modern-contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.form-header h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.form-header p {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-note {
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.required {
+    color: #dc3545;
     font-weight: bold;
-    font-size: 14px;
-    text-decoration: none;
+}
+
+.form-label {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.label-icon {
+    font-size: 1.1rem;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    animation: pulse 2s infinite;
+    background: #fafafa;
+    font-family: inherit;
+    box-sizing: border-box;
 }
 
-.contact-fallback:hover {
-    background: linear-gradient(135deg, #0056b3, #004085);
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
-.contact-fallback::before {
-    content: "💬";
-    font-size: 16px;
+.submit-btn:active {
+    transform: translateY(0);
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+/* Contact Information Styles */
+.contact-info-wrapper {
+    padding: 0;
 }
 
-/* Hide fallback when Tawk is loaded */
-body.tawk-loaded .contact-fallback {
-    display: none;
+.contact-header h3 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-header p {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.contact-methods {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.contact-details h4 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contact-link:hover {
+    color: #5a6fd8;
+    text-decoration: underline;
+}
+
+.contact-details p {
+    color: #6c757d;
+    margin: 5px 0;
+}
+
+.hours-info {
+    margin-top: 10px;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.hours-item strong {
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.hours-item span {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.coverage-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.coverage-list li {
+    padding: 5px 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+/* Quick Actions */
+.quick-actions {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+.quick-actions h4 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: grid;
+    gap: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.action-btn.emergency {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: white;
+}
+
+.action-btn.emergency:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.action-btn.email {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.action-btn.email:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.btn-text {
+    font-size: 1rem;
+}
+
+/* Honeypot field - hidden from users */
+.honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+}
+
+/* Modern Service Page Contact Forms */
+.service-contact-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info {
+    padding: 20px 0;
+}
+
+.contact-header h2 {
+    color: #1e293b;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.contact-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.contact-benefits {
+    margin-bottom: 40px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.benefit-content h4 {
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.benefit-content p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.contact-methods {
+    display: grid;
+    gap: 16px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-method:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-method.emergency:hover {
+    border-color: #ef4444;
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.contact-method.email:hover {
+    border-color: #3b82f6;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.method-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.method-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.method-content strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.method-content span {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Modern Service Form Styles */
+.modern-service-form {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.modern-service-form .form-header h3 {
+    color: #1e293b;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.modern-service-form .form-header p {
+    color: #64748b;
+    font-size: 1rem;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.service-contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.service-contact-form .form-field {
+    margin-bottom: 24px;
+}
+
+.service-contact-form .field-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.service-contact-form .label-icon {
+    font-size: 1.1rem;
+}
+
+.service-contact-form .required {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.service-contact-form .form-input,
+.service-contact-form .form-textarea,
+.service-contact-form .form-select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.service-contact-form .form-input:focus,
+.service-contact-form .form-textarea:focus,
+.service-contact-form .form-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.service-contact-form .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.checkbox-item {
+    position: relative;
+}
+
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-item label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #374151;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.checkbox-item:hover label {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label:hover {
+    background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+}
+
+.checkbox-icon {
+    font-size: 1.1rem;
+    min-width: 20px;
+}
+
+.checkbox-text {
+    font-size: 0.95rem;
+}
+
+.submit-btn.service-submit {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.submit-btn.service-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.3);
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.submit-btn.service-submit:active {
+    transform: translateY(0);
+}
+
+.form-note {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.note-icon {
+    color: #10b981;
+}
+
+/* Mobile Responsive Styles for Modern Contact Form */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .modern-contact-form {
+        padding: 25px;
+    }
+    
+    .contact-container {
+        padding: 0 15px;
+    }
+    
+    .main-contact-section {
+        padding: 40px 0;
+    }
+    
+    .contact-hero {
+        padding: 40px 0;
+    }
+    
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .form-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-card {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .contact-icon {
+        min-width: auto;
+    }
+    
+    .hours-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+    /* Service Page Mobile Responsive */
+    .service-contact-section {
+        padding: 60px 0;
+    }
+    
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .modern-service-form {
+        padding: 30px 20px;
+    }
+    
+    .service-contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .benefit-item {
+        padding: 16px;
+    }
+    
+.contact-method {
+    padding: 16px;
+}
+
+@media (max-width: 480px) {
+    .modern-contact-form {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .contact-container {
+        padding: 0 10px;
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 12px 14px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .contact-card {
+        padding: 15px;
+    }
+    
+    .quick-actions {
+        padding: 20px;
+    }
+    
+    .submit-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+    
+    /* Service Form Mobile */
+    .modern-service-form {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+    
+    .service-contact-form .form-input,
+    .service-contact-form .form-textarea,
+    .service-contact-form .form-select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px 14px;
+    }
+    
+    .submit-btn.service-submit {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+    
+    .contact-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .checkbox-item label {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
 }

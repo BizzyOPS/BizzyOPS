@@ -198,139 +198,196 @@
             </div>
         </div>
 
-        <div class="pricing-section">
+        <!-- Modern Contact Section -->
+        <section class="service-contact-section">
             <div class="container">
-                <h2>Hardware & Server Support Pricing</h2>
-                <p class="subtitle">Flexible pricing options to match your hardware support needs and budget</p>
-                
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Essential</h3>
-                        <div class="pricing-amount">£150</div>
-                        <div class="pricing-period">per month</div>
-                        <p>Basic hardware support for small businesses</p>
-                        <ul class="pricing-features">
-                            <li>Business hours support</li>
-                            <li>Basic monitoring (1-5 devices)</li>
-                            <li>Monthly maintenance checks</li>
-                            <li>Email and phone support</li>
-                            <li>Remote troubleshooting</li>
-                            <li>Hardware health reports</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
+                <div class="contact-wrapper">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-header">
+                            <h2>Optimize Your Hardware Infrastructure</h2>
+                            <p>Get professional hardware and server support to maximize performance, minimize downtime, and ensure your systems run at peak efficiency.</p>
+                        </div>
+                        
+                        <div class="contact-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔧</div>
+                                <div class="benefit-content">
+                                    <h4>Expert Maintenance</h4>
+                                    <p>Proactive hardware maintenance and optimization by certified technicians</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-content">
+                                    <h4>Rapid Response</h4>
+                                    <p>Emergency hardware support with guaranteed response times</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛡️</div>
+                                <div class="benefit-content">
+                                    <h4>Uptime Guarantee</h4>
+                                    <p>99.9% uptime with comprehensive monitoring and maintenance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+44-020-8230-1647" class="contact-method emergency">
+                                <span class="method-icon">🚨</span>
+                                <div class="method-content">
+                                    <strong>Emergency Hardware</strong>
+                                    <span>+44 020 8230 1647</span>
+                                </div>
+                            </a>
+                            <a href="mailto:support@bizzyops.com" class="contact-method email">
+                                <span class="method-icon">🔧</span>
+                                <div class="method-content">
+                                    <strong>Hardware Team</strong>
+                                    <span>support@bizzyops.com</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div class="pricing-card featured">
-                        <h3>Professional</h3>
-                        <div class="pricing-amount">£399</div>
-                        <div class="pricing-period">per month</div>
-                        <p>Comprehensive support for growing businesses</p>
-                        <ul class="pricing-features">
-                            <li>24/7 monitoring and support</li>
-                            <li>Advanced monitoring (5-25 devices)</li>
-                            <li>Proactive maintenance</li>
-                            <li>Priority response (4hr SLA)</li>
-                            <li>On-site support included</li>
-                            <li>Hardware replacement service</li>
-                            <li>Performance optimization</li>
-                            <li>Backup monitoring</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Get Started</a>
-                    </div>
-                    
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <div class="pricing-amount">£750</div>
-                        <div class="pricing-period">per month</div>
-                        <p>Premium support for large organizations</p>
-                        <ul class="pricing-features">
-                            <li>Everything in Professional</li>
-                            <li>Unlimited device monitoring</li>
-                            <li>Dedicated account manager</li>
-                            <li>2-hour emergency response</li>
-                            <li>Custom SLA agreements</li>
-                            <li>Strategic hardware planning</li>
-                            <li>Vendor management</li>
-                            <li>Compliance reporting</li>
-                        </ul>
-                        <a href="../contact.html" class="pricing-cta">Contact Sales</a>
+                    <!-- Contact Form -->
+                    <div class="modern-service-form">
+                        <div class="form-header">
+                            <h3>Get Your Hardware Assessment</h3>
+                            <p>Tell us about your hardware infrastructure and we'll provide a comprehensive support plan tailored to your needs.</p>
+                        </div>
+                        
+                        <form class="service-contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="to" value="support@bizzyops.com">
+                            <input type="hidden" name="subject" value="Hardware & Server Support Request - BizzyOPS">
+                            <input type="hidden" name="from_name" value="BizzyOPS Hardware Support Form">
+                            
+                            <!-- Honeypot Spam Protection -->
+                            <input type="checkbox" name="botcheck" class="honeypot" aria-label="Bot check - leave unchecked" tabindex="-1">
+                            
+                            <!-- Success redirect -->
+                            <input type="hidden" name="redirect" value="false">
+                            
+                            <!-- Form Fields -->
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="name" class="field-label">
+                                        <span class="label-icon">👤</span>
+                                        <span class="label-text">Full Name</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="name" name="name" class="form-input" required 
+                                           placeholder="Enter your full name">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="email" class="field-label">
+                                        <span class="label-icon">📧</span>
+                                        <span class="label-text">Email Address</span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input" required 
+                                           placeholder="your.email@company.com">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="phone" class="field-label">
+                                        <span class="label-icon">📞</span>
+                                        <span class="label-text">Phone Number</span>
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" 
+                                           placeholder="+44 20 1234 5678">
+                                </div>
+                                
+                                <div class="form-field">
+                                    <label for="company" class="field-label">
+                                        <span class="label-icon">🏢</span>
+                                        <span class="label-text">Company Name</span>
+                                    </label>
+                                    <input type="text" id="company" name="company" class="form-input" 
+                                           placeholder="Your Company Ltd">
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="hardware" class="field-label">
+                                    <span class="label-icon">💻</span>
+                                    <span class="label-text">Current Hardware Setup</span>
+                                </label>
+                                <select id="hardware" name="hardware" class="form-select">
+                                    <option value="">Select your hardware scale</option>
+                                    <option value="1-5">🖥️ Small Setup (1-5 devices)</option>
+                                    <option value="5-25">🏢 Medium Setup (5-25 devices)</option>
+                                    <option value="25-100">🏬 Large Setup (25-100 devices)</option>
+                                    <option value="100+">🏭 Enterprise (100+ devices)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label class="field-label">
+                                    <span class="label-icon">🛠️</span>
+                                    <span class="label-text">Support Services Needed</span>
+                                </label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="server-support" name="services[]" value="Server Support">
+                                        <label for="server-support">
+                                            <span class="checkbox-icon">🖥️</span>
+                                            <span class="checkbox-text">Server Support</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="hardware-maintenance" name="services[]" value="Hardware Maintenance">
+                                        <label for="hardware-maintenance">
+                                            <span class="checkbox-icon">🔧</span>
+                                            <span class="checkbox-text">Hardware Maintenance</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="monitoring" name="services[]" value="24/7 Monitoring">
+                                        <label for="monitoring">
+                                            <span class="checkbox-icon">📊</span>
+                                            <span class="checkbox-text">24/7 Monitoring</span>
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="emergency" name="services[]" value="Emergency Support">
+                                        <label for="emergency">
+                                            <span class="checkbox-icon">🚨</span>
+                                            <span class="checkbox-text">Emergency Support</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field">
+                                <label for="message" class="field-label">
+                                    <span class="label-icon">🔍</span>
+                                    <span class="label-text">Current Issues or Requirements</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea" rows="4" 
+                                          placeholder="Describe your current hardware setup, any performance issues, or specific support requirements you have. Include server models, network equipment, or any recurring problems."></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn service-submit">
+                                    <span class="btn-icon">🔧</span>
+                                    <span class="btn-text">Request Hardware Assessment</span>
+                                </button>
+                                <p class="form-note">
+                                    <span class="note-icon">✅</span>
+                                    Free assessment • Expert analysis • Response within 2 hours
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contact-form-section">
-            <div class="container">
-                <h2>Need Hardware Support?</h2>
-                <p class="subtitle">Get in touch for a free assessment of your hardware infrastructure and discover how we can improve your system reliability.</p>
-                
-                <form class="contact-form" action="../contact.html" method="GET">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="hardware">Current Hardware Setup</label>
-                        <select id="hardware" name="hardware">
-                            <option value="">Select your setup</option>
-                            <option value="1-5">1-5 devices</option>
-                            <option value="5-25">5-25 devices</option>
-                            <option value="25-100">25-100 devices</option>
-                            <option value="100+">100+ devices</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="services">Support Services Needed</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="server-support" name="services[]" value="server-support" aria-label="Server Support">
-                                <label for="server-support">Server Support</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="hardware-maintenance" name="services[]" value="hardware-maintenance" aria-label="Hardware Maintenance">
-                                <label for="hardware-maintenance">Hardware Maintenance</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="monitoring" name="services[]" value="monitoring" aria-label="24/7 Monitoring">
-                                <label for="monitoring">24/7 Monitoring</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="emergency" name="services[]" value="emergency" aria-label="Emergency Support">
-                                <label for="emergency">Emergency Support</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Current Issues or Requirements</label>
-                        <textarea id="message" name="message" placeholder="Describe your current hardware setup and any specific support requirements..."></textarea>
-                    </div>
-                    
-                    <div class="form-submit">
-                        <button type="submit">Request Free Assessment</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        </section>
     </section>
 
     <!-- Key Services -->
