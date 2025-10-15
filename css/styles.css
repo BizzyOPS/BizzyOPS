@@ -3650,10 +3650,17 @@ iframe[src*="tawk.to"] {
 
 /* Modern Contact Page Styles */
 .contact-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: white;
+    color: #333 !important;
     padding: 60px 0;
     text-align: center;
+}
+
+.contact-hero h1,
+.contact-hero p,
+.contact-hero .hero-content h1,
+.contact-hero .hero-content p {
+    color: #333 !important;
 }
 
 .main-contact-section {
@@ -3747,9 +3754,9 @@ iframe[src*="tawk.to"] {
 .form-textarea:focus,
 .form-select:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #3b82f6;
     background: white;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-textarea {
@@ -3758,7 +3765,7 @@ iframe[src*="tawk.to"] {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     color: white;
     border: none;
     padding: 16px 32px;
@@ -3774,7 +3781,7 @@ iframe[src*="tawk.to"] {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
 
 .submit-btn:active {
@@ -3835,7 +3842,7 @@ iframe[src*="tawk.to"] {
 }
 
 .contact-link {
-    color: #667eea;
+    color: #3b82f6;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -3934,13 +3941,13 @@ iframe[src*="tawk.to"] {
 }
 
 .action-btn.email {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     color: white;
 }
 
 .action-btn.email:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
 }
 
 .btn-icon {
