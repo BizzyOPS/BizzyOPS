@@ -210,8 +210,6 @@ DirectoryIndex index.html index.php
 # ========================================
 
 # Emergency contact shortcuts
-Redirect 301 /emergency /contact
-Redirect 301 /sos /contact
 Redirect 301 /help /contact
 Redirect 301 /support /contact
 

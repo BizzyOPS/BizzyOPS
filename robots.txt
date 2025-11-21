@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bizzyops.co.uk/sitemap.xml
+
+# Important pages for SEO
+Allow: /services/
+Allow: /blog/
+Allow: /knowledge/
+Allow: /about
+Allow: /contact
+
+# Block unwanted crawlers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
